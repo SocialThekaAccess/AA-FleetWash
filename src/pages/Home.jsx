@@ -15,6 +15,9 @@ import wheelAfter from '../assets/truck-wheelAfter.jpg';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import truckTopView from '../assets/trucktopviewMachine.png';
 import kenworthimg from '../assets/kenworthsideprofile.png';
+import video1 from '../assets/AA REEL 1.mp4';
+import video2 from '../assets/AA REEL 2 V2.mp4';
+import video3 from '../assets/AA REEL 3 V2.mp4';
 import './Home.css';
 
 function Home() {
@@ -487,6 +490,39 @@ function Home() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ============ VIDEO CAROUSEL ============ */}
+      <section className="aa-videos">
+        <div className="aa-shell">
+          <div className="aa-videos__header">
+            <div className="aa-eyebrow">
+              <span className="aa-eyebrow__dot" />
+              SEE US IN ACTION
+            </div>
+            <h2>Real trucks. Real results.</h2>
+          </div>
+        </div>
+        
+        <div className="aa-videos__track">
+          <div className="aa-videos__scroll">
+            <div className="aa-video-card">
+              <video autoPlay loop muted playsInline>
+                <source src={video1} type="video/mp4" />
+              </video>
+            </div>
+            <div className="aa-video-card">
+              <video autoPlay loop muted playsInline>
+                <source src={video2} type="video/mp4" />
+              </video>
+            </div>
+            <div className="aa-video-card">
+              <video autoPlay loop muted playsInline>
+                <source src={video3} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>
