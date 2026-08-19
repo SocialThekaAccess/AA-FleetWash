@@ -12,6 +12,10 @@ function Footer() {
             <p className="footer-tagline">
               Professional fleet and heavy equipment washing services. Trusted by commercial operators across the region.
             </p>
+            <div className="footer-contact-info">
+              <p>📍 175 Jardin Road, Wollert, VIC 3750</p>
+              <p>📞 <a href="tel:+61489225500">+61 489 225 500</a></p>
+            </div>
           </div>
 
           <div className="footer-links">

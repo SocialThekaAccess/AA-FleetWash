@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import logo from '../assets/AA-FleetWashbg.png';
 import redTruck1 from '../assets/RedTruck1.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
@@ -132,6 +132,10 @@ function Gallery() {
 
       {/* HEADER */}
       <section className="gallery-top">
+        <a href="/" className="gallery-logo">
+          <img src={logo} alt="AA Fleet Wash" />
+        </a>
+        
         <div className="gallery-heading">
           <div className="gallery-label">
             <span />
@@ -139,9 +143,7 @@ function Gallery() {
           </div>
 
           <h1>
-            Built to Perform.
-            <br />
-            Ready for Every Mile.
+            Built to Perform  Ready for Every Mile
           </h1>
 
           <p>

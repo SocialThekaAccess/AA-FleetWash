@@ -190,6 +190,29 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Logo - Top Left */
+.aa-hero__logo {
+  position: absolute;
+  top: 32px;
+  left: 40px;
+  z-index: 20;
+  width: 120px;
+  cursor: pointer;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  text-decoration: none;
+}
+
+.aa-hero__logo:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.aa-hero__logo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* Full Background Image */
 .aa-hero__bg {
   position: absolute;
@@ -322,17 +345,30 @@
   line-height: 1;
 }
 
+/* Hero Layout */
+.aa-hero__layout {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 80px);
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: start;
+  padding-top: 100px;
+  padding-bottom: 60px;
+}
+
 /* Main Content — dedicated wrapper, NOT using .aa-shell so it never gets
    auto-centered on the page. Padding-left gives the responsive gutter
    instead, and text stays anchored left. */
 .aa-hero__content {
   position: relative;
   z-index: 5;
-  padding-top: 120px;
-  padding-bottom: 40px;
-  padding-left: clamp(24px, 5vw, 80px);
-  padding-right: 24px;
-  max-width: 900px;
+  padding: 0;
+  max-width: 100%;
   width: 100%;
   margin: 0;
   text-align: left;
@@ -345,6 +381,124 @@
   width: 100%;
   padding: 0 0 40px 0;
   margin-top: auto;
+}
+
+/* Hero Form — compact, boxy, centered card with logo inside the header */
+.aa-hero__form {
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.aa-hero__form-header {
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.aa-hero__form-logo {
+  height: 92px;
+  width: auto;
+  max-width: 100%;
+  margin: 0 auto 14px;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 18px rgba(10, 22, 40, 0.18));
+  transition: transform 0.3s ease;
+}
+
+.aa-hero__form-logo:hover {
+  transform: scale(1.03);
+}
+
+.aa-hero__form-header p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--brand-orange);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.aa-hero__form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.aa-form-group {
+  width: 100%;
+}
+
+.aa-form-group input,
+.aa-form-group select,
+.aa-form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid rgba(15, 23, 42, 0.15);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  color: var(--ink);
+  background: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.aa-form-group input:focus,
+.aa-form-group select:focus,
+.aa-form-group textarea:focus {
+  outline: none;
+  border-color: var(--brand-orange);
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1);
+}
+
+.aa-form-group input::placeholder,
+.aa-form-group textarea::placeholder {
+  color: rgba(15, 23, 42, 0.4);
+}
+
+.aa-form-group select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23334155' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.aa-form-group textarea {
+  resize: vertical;
+  min-height: 50px;
+}
+
+.aa-btn--full {
+  width: 100%;
+  margin-top: 4px;
+}
+
+.aa-form-trust {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0 0;
+  font-size: 11px;
+  color: rgba(15, 23, 42, 0.6);
+  font-weight: 500;
+}
+
+.aa-form-trust svg {
+  width: 16px;
+  height: 16px;
+  color: #10b981;
+  flex-shrink: 0;
 }
 
 .aa-eyebrow--hero {
@@ -743,6 +897,46 @@
   color: #475569;
   font-size: 12px;
   font-weight: 600;
+}
+
+.aa-proof__metric--reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+}
+
+.aa-proof__reviews-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.aa-proof__reviews-badge svg {
+  width: 32px;
+  height: 32px;
+  color: #3b82f6;
+  flex-shrink: 0;
+}
+
+.aa-proof__reviews-badge strong {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, var(--brand-blue) 0%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+.aa-proof__metric--reviews span {
+  color: #475569;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 0;
 }
 
 /* ============================= SECTION HEAD (shared) ============================= */
@@ -1175,22 +1369,22 @@
 /* ============================= WHY CHOOSE ============================= */
 
 .aa-why {
-  padding: 100px 0;
+  padding: 120px 0;
   background: var(--paper);
   color: var(--text-on-paper);
 }
 
 .aa-why__layout {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: clamp(80px, 10vw, 140px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 100px;
   align-items: start;
 }
 
 .aa-why__intro {
   position: sticky;
   top: 120px;
-  padding-right: 20px;
+  padding-right: 40px;
 }
 
 .aa-why__intro .aa-eyebrow {
@@ -1817,7 +2011,7 @@
   }
 
   .aa-hero__content {
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom: 60px;
   }
 
@@ -1909,7 +2103,7 @@
   }
 
   .aa-hero__content {
-    padding-top: 100px;
+    padding-top: 40px;
     padding-bottom: 50px;
     padding-left: 20px;
     padding-right: 20px;
@@ -1968,6 +2162,11 @@
 
   .aa-hero__trust-item strong {
     font-size: 24px;
+  }
+
+  .aa-hero__form {
+    max-width: 100%;
+    padding: 22px;
   }
 
   .aa-proof__grid {

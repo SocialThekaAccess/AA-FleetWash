@@ -10,6 +10,7 @@
   box-shadow: none;
   border-bottom: none;
   backdrop-filter: none;
+  display: none;
 }
 
 .header.scrolled {

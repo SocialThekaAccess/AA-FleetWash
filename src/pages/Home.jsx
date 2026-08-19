@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import logo from '../assets/AA-FleetWashbg.png';
 import redTruck from '../assets/RedTruck.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
@@ -187,32 +188,76 @@ function Home() {
           <div className="aa-hero__overlay" />
         </div>
 
-        {/* Main Content */}
-        <div className="aa-hero__content">
-          <div className="aa-eyebrow aa-eyebrow--hero">
-            <span className="aa-eyebrow__dot" />
-            MELBOURNE · MOBILE + EPPING YARD
+        {/* Hero Layout */}
+        <div className="aa-hero__layout">
+          {/* Main Content */}
+          <div className="aa-hero__content">
+            <div className="aa-eyebrow aa-eyebrow--hero">
+              <span className="aa-eyebrow__dot" />
+              MELBOURNE · MOBILE + EPPING YARD
+            </div>
+
+            <h1 className="aa-hero__title">
+              Built for the road Detailed to stand out
+            </h1>
+
+            <p className="aa-hero__lead">
+              Premium truck, fleet and heavy machinery detailing that works around your schedule. From on-site service across Melbourne to our Epping yard, we deliver a professional finish that keeps your fleet clean, sharp and ready for the next job.
+            </p>
+
+            <div className="aa-hero__actions">
+              <Link to="/quote" className="aa-btn aa-btn--primary">
+                GET A FREE QUOTE
+              </Link>
+              <a href="tel:+61489225500" className="aa-btn aa-btn--secondary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +61 489 225 500
+              </a>
+            </div>
           </div>
 
-          <h1 className="aa-hero__title">
-            TRUCKS WORK HARD
-            WE FINISH THE JOB PROPERLY
-          </h1>
-
-          <p className="aa-hero__lead">
-            Premium truck, fleet and heavy machinery detailing, built around your dispatch — on-site anywhere across Melbourne, or at our Epping yard.
-          </p>
-
-          <div className="aa-hero__actions">
-            <Link to="/quote" className="aa-btn aa-btn--primary">
-              GET A FREE QUOTE
-            </Link>
-            <a href="tel:0415275751" className="aa-btn aa-btn--secondary">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-              </svg>
-              0415 275 751
-            </a>
+          {/* Quote Form */}
+          <div className="aa-hero__form">
+            <div className="aa-hero__form-header">
+              <img src={logo} alt="AA Fleet Wash" className="aa-hero__form-logo" />
+              <p>Fast response within 30 minutes</p>
+            </div>
+            <form className="aa-hero__form-body">
+              <div className="aa-form-group">
+                <input type="text" placeholder="Your Name" required />
+              </div>
+              <div className="aa-form-group">
+                <input type="tel" placeholder="Phone Number" required />
+              </div>
+              <div className="aa-form-group">
+                <input type="email" placeholder="Email Address" required />
+              </div>
+              <div className="aa-form-group">
+                <select required>
+                  <option value="">Select Service</option>
+                  <option value="prime-mover">Prime Mover Detail</option>
+                  <option value="engine-bay">Engine Bay Clean</option>
+                  <option value="dog-tipper">Dog & Tipper Clean</option>
+                  <option value="full-wash">Full Truck Wash</option>
+                  <option value="fleet">Fleet Program</option>
+                  <option value="heavy-machinery">Heavy Machinery</option>
+                </select>
+              </div>
+              <div className="aa-form-group">
+                <textarea placeholder="Tell us about your vehicle..." rows="3"></textarea>
+              </div>
+              <button type="submit" className="aa-btn aa-btn--primary aa-btn--full">
+                Get Free Quote
+              </button>
+              <p className="aa-form-trust">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/>
+                </svg>
+                Your information is secure and confidential
+              </p>
+            </form>
           </div>
         </div>
 
@@ -373,10 +418,14 @@ function Home() {
             <strong>8+</strong>
             <span>Years on the tools</span>
           </div>
-          <div className="aa-proof__metric">
-            <small>Google</small>
-            <strong>5.0</strong>
-            <span>73+ customer reviews</span>
+          <div className="aa-proof__metric aa-proof__metric--reviews">
+            <div className="aa-proof__reviews-badge">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <strong>5.0</strong>
+            </div>
+            <span>73+ Google reviews</span>
           </div>
           <div className="aa-proof__metric">
             <small>Guarantee</small>
@@ -457,7 +506,7 @@ function Home() {
               The owners are still on the tools. That means clear communication, consistent
               workmanship and a proper sign-off before the job is called done.
             </p>
-            <a href="tel:0415275751" className="aa-link aa-link--light">
+            <a href="tel:+61489225500" className="aa-link aa-link--light">
               Speak directly with the crew <i aria-hidden="true">↗</i>
             </a>
           </div>
@@ -607,8 +656,8 @@ function Home() {
               <Link to="/quote" className="aa-btn aa-btn--brass">
                 Build my program <i aria-hidden="true">↗</i>
               </Link>
-              <a href="tel:0415275751" className="aa-btn aa-btn--ghost">
-                Call 0415 275 751
+              <a href="tel:+61489225500" className="aa-btn aa-btn--ghost">
+                Call +61 489 225 500
               </a>
               <small>Fully insured · Same-day availability · Pay after the job</small>
             </div>

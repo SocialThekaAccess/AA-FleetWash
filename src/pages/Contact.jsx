@@ -36,9 +36,9 @@ function Contact() {
                 </div>
                 <div className="contact-card-content">
                   <div className="contact-card-label">PHONE · FASTEST</div>
-                  <div className="contact-card-value">0415 275 751</div>
+                  <div className="contact-card-value">+61 489 225 500</div>
                 </div>
-                <a href="tel:0415275751" className="contact-card-btn">Call now →</a>
+                <a href="tel:+61489225500" className="contact-card-btn">Call now →</a>
               </div>
 
               <div className="contact-card">
@@ -49,9 +49,9 @@ function Contact() {
                 </div>
                 <div className="contact-card-content">
                   <div className="contact-card-label">SMS / WHATSAPP</div>
-                  <div className="contact-card-value">Text us a photo · 0415 275 751</div>
+                  <div className="contact-card-value">Text us a photo · +61 489 225 500</div>
                 </div>
-                <a href="sms:0415275751" className="contact-card-btn">Send a text →</a>
+                <a href="sms:+61489225500" className="contact-card-btn">Send a text →</a>
               </div>
 
               <div className="contact-card">
@@ -77,9 +77,9 @@ function Contact() {
                 </div>
                 <div className="contact-card-content">
                   <div className="contact-card-label">YARD</div>
-                  <div className="contact-card-value">55 Produce Dr, Epping VIC 3076</div>
+                  <div className="contact-card-value">175 Jardin Road, Wollert, VIC 3750</div>
                 </div>
-                <a href="https://maps.google.com/?q=55+Produce+Dr+Epping+VIC+3076" target="_blank" rel="noopener noreferrer" className="contact-card-btn">Get directions →</a>
+                <a href="https://maps.google.com/?q=175+Jardin+Road+Wollert+VIC+3750" target="_blank" rel="noopener noreferrer" className="contact-card-btn">Get directions →</a>
               </div>
 
               <div className="contact-info-grid">

@@ -3,7 +3,8 @@ import rightCornerTruck from '../assets/RightCornorTruck.png';
 import redTruck from '../assets/RedTruck.png';
 import whiteTruck from '../assets/TruckWhite1.png';
 import minoTruck from '../assets/MinoTruck1.png';
-import truckTire from '../assets/TruckTire.png';
+import truckTopView from '../assets/trucktopviewMachine.png';
+import logo from '../assets/AA-FleetWashbg.png';
 import './SharedPages.css';
 
 function Equipment() {
@@ -13,13 +14,16 @@ function Equipment() {
     { name: 'Cranes', image: cornerTruck, description: 'Tower cranes and mobile cranes' },
     { name: 'Bulldozers', image: rightCornerTruck, description: 'All bulldozer models and sizes' },
     { name: 'Excavators', image: minoTruck, description: 'Mini to large excavators' },
-    { name: 'Heavy Machinery', image: truckTire, description: 'Construction and industrial equipment' }
+    { name: 'Heavy Machinery', image: truckTopView, description: 'Construction and industrial equipment' }
   ];
 
   return (
     <div className="page">
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
+        <a href="/" className="page-hero-logo">
+          <img src={logo} alt="AA Fleet Wash" />
+        </a>
         <div className="page-hero-content">
           <div className="hero-badge">EQUIPMENT</div>
           <h1>We Clean Everything</h1>

@@ -1,17 +1,28 @@
 import truck1 from '../assets/Truck1.png';
 import truck2 from '../assets/Truck2.png';
 import redTruck from '../assets/RedTruck1.png';
+import kenworthimg from '../assets/kenworthsideprofile.png';
+import logo from '../assets/AA-FleetWashbg.png';
 import './SharedPages.css';
 
 function About() {
   return (
     <div className="about-page-modern">
-      {/* Hero Section */}
-      <section className="about-hero">
+      {/* Hero Section with Background */}
+      <section className="about-hero about-hero--bg">
+        <div className="about-hero__bg">
+          <img src={kenworthimg} alt="AA Fleet Wash Trucks" />
+          <div className="about-hero__overlay" />
+        </div>
+        
+        <a href="/" className="about-hero__logo">
+          <img src={logo} alt="AA Fleet Wash" />
+        </a>
+
         <div className="section-container">
           <div className="about-hero-content">
             <span className="section-badge">● ABOUT AA FLEET WASH</span>
-            <h1>We're not the cheapest. <span className="highlight-text">We're the most thorough.</span></h1>
+            <h1>We're not the cheapest <br/> We're the most thorough </h1>
             <p className="hero-subtitle">
               8+ years washing trucks that earn their keep. Owner-operated, same crew, same standards—whether it's your first wash or your hundredth.
             </p>
@@ -113,7 +124,7 @@ function About() {
             <p>Most quotes go out within 7 minutes. Same-day availability if you need it.</p>
             <div className="cta-buttons">
               <a href="/quote" className="btn-primary-modern">Build my program →</a>
-              <a href="tel:0415275751" className="btn-secondary-modern">Or call 0415 275 751</a>
+              <a href="tel:+61489225500" className="btn-secondary-modern">Or call +61 489 225 500</a>
             </div>
           </div>
         </div>
