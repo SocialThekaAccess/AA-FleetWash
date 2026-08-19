@@ -396,13 +396,13 @@ function Home() {
                 What we wash
               </div>
               <h2>
-                Built for working rigs.<span>Finished like show trucks.</span>
+                Built for working rigs<span>Finished like show trucks</span>
               </h2>
             </div>
             <div className="aa-section-head__aside">
               <p>
                 Six core services, one experienced crew. Choose a single detail or let us build a
-                recurring fleet program around your dispatch.
+                recurring fleet program around your dispatch
               </p>
               <Link to="/services" className="aa-link">
                 Explore all services <i aria-hidden="true">↗</i>
@@ -451,7 +451,7 @@ function Home() {
               Why operators stay
             </div>
             <h2>
-              Premium standards.<span>Operator-level care.</span>
+              Premium standards.<span>Operator-level care</span>
             </h2>
             <p>
               The owners are still on the tools. That means clear communication, consistent
@@ -599,9 +599,9 @@ function Home() {
                 Fleet programs
               </div>
               <h2>
-                Keep the fleet clean.<span>Keep the fleet moving.</span>
+                Keep the fleet clean.<span>Keep the fleet moving</span>
               </h2>
-              <p>Weekly, fortnightly or monthly scheduling. One crew, one standard, one simple invoice.</p>
+              <p>Weekly, fortnightly or monthly scheduling. One crew, one standard, one simple invoice</p>
             </div>
             <div className="aa-cta__actions">
               <Link to="/quote" className="aa-btn aa-btn--brass">
