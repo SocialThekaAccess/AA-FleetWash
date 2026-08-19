@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import redTruck from '../assets/RedTruck.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
@@ -12,9 +13,18 @@ import truck2 from '../assets/Truck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import truckTopView from '../assets/trucktopviewMachine.png';
+import kenworthimg from '../assets/kenworthsideprofile.png';
 import './Home.css';
 
 function Home() {
+  const [selectedImage, setSelectedImage] = useState(0);
+
+  const galleryImages = [
+    { src: minoTruck2, alt: 'Exterior view' },
+    { src: redTruck2, alt: 'Detail view' },
+    { src: whiteTruck1, alt: 'Side view' }
+  ];
+
   const services = [
     {
       code: 'PM-01',
@@ -47,12 +57,14 @@ function Home() {
       title: 'Fleet washing program',
       description: 'Customized recurring programs for fleet operators with dedicated scheduling.'
     },
+
     // {
     //   code: 'HM-06',
     //   image: truck2,
     //   title: 'Heavy machinery wash',
     //   description: 'Specialized cleaning for construction equipment, excavators, and machinery.'
     // }
+
   ];
 
   const testimonials = [
@@ -169,112 +181,177 @@ function Home() {
     <main className="aa-home">
       {/* ============ HERO ============ */}
       <section className="aa-hero">
-        <div className="aa-hero__field" aria-hidden="true" />
-        <div className="aa-hero__glow aa-hero__glow--one" aria-hidden="true" />
-        <div className="aa-hero__glow aa-hero__glow--two" aria-hidden="true" />
+        {/* Full Background Image */}
+        <div className="aa-hero__bg">
+          <img src={kenworthimg} alt="AA Fleet Wash Premium Truck Detailing" />
+          <div className="aa-hero__overlay" />
+        </div>
 
-        <div className="aa-shell aa-hero__layout">
-          <div className="aa-hero__copy">
-            <div className="aa-eyebrow">
-              <span className="aa-eyebrow__dot" />
-              Melbourne · Mobile + Epping Yard
-            </div>
-
-         <h1 className="aa-hero__title">
-  Trucks work hard we finish
-  <br />
-  the job properly
-</h1>
-            <p className="aa-hero__lead">
-              Premium truck, fleet and heavy machinery detailing, built around your dispatch — on-site
-              anywhere across Melbourne, or at our Epping yard.
-            </p>
-
-            <div className="aa-hero__actions">
-              <Link to="/quote" className="aa-btn aa-btn--brass">
-                Get a free quote
-                <i aria-hidden="true">↗</i>
-              </Link>
-              <a href="tel:0415275751" className="aa-hero__call">
-                <span className="aa-hero__call-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </span>
-                <span>
-                  <small>Talk to the crew</small>
-                  <strong>0415 275 751</strong>
-                </span>
-              </a>
-            </div>
-
-            <div className="aa-hero__stats">
-              <div>
-                <strong>5.0</strong>
-                <span>★★★★★</span>
-                <small>73+ reviews</small>
-              </div>
-              <div>
-                <strong>300+</strong>
-                <small>vehicles detailed</small>
-              </div>
-              <div>
-                <strong>8+</strong>
-                <small>years on the tools</small>
-              </div>
-            </div>
+        {/* Main Content */}
+        <div className="aa-hero__content">
+          <div className="aa-eyebrow aa-eyebrow--hero">
+            <span className="aa-eyebrow__dot" />
+            MELBOURNE · MOBILE + EPPING YARD
           </div>
 
-          {/* Signature element: the riveted service plate */}
-          <div className="aa-hero__visual">
-            <div className="aa-plate">
-              <span className="aa-plate__rivet aa-plate__rivet--tl" />
-              <span className="aa-plate__rivet aa-plate__rivet--tr" />
-              <span className="aa-plate__rivet aa-plate__rivet--bl" />
-              <span className="aa-plate__rivet aa-plate__rivet--br" />
-              <div className="aa-plate__frame">
-                <img src={redTruck2} alt="AA Fleet Wash premium truck detailing" />
-                <div className="aa-plate__shade" />
-                <div className="aa-plate__label">
-                  <span>AA FLEET WASH · No. 0417</span>
-                  <strong>Service class: Premium</strong>
-                </div>
-              </div>
-            </div>
+          <h1 className="aa-hero__title">
+            TRUCKS WORK HARD
+            WE FINISH THE JOB PROPERLY
+          </h1>
 
-            <div className="aa-medallion">
-              <span>First booking</span>
-              <strong>15% off</strong>
-              <small>Limited weekly slots</small>
-            </div>
+          <p className="aa-hero__lead">
+            Premium truck, fleet and heavy machinery detailing, built around your dispatch — on-site anywhere across Melbourne, or at our Epping yard.
+          </p>
 
-            <div className="aa-tag">
-              <span className="aa-tag__live">
-                <i aria-hidden="true" />
-                Bookings open
-              </span>
-              <strong>7 days</strong>
-              <small>By appointment</small>
-            </div>
+          <div className="aa-hero__actions">
+            <Link to="/quote" className="aa-btn aa-btn--primary">
+              GET A FREE QUOTE
+            </Link>
+            <a href="tel:0415275751" className="aa-btn aa-btn--secondary">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              0415 275 751
+            </a>
           </div>
         </div>
 
-        <div className="aa-shell aa-hero__rail">
-          <div>
-            <span>Mobile wash</span>
-            <strong>We come to your depot</strong>
-          </div>
-          <div>
-            <span>Epping yard</span>
-            <strong>Drop in by booking</strong>
-          </div>
-          <div>
-            <span>Fleet programs</span>
-            <strong>Recurring schedules</strong>
-          </div>
-          <div>
-            <span>Re-wash promise</span>
-            <strong>Fixed on the spot, free</strong>
+        {/* Full Width Reviews Carousel */}
+        <div className="aa-hero__reviews-fullwidth">
+          <div className="aa-hero__trust">
+            <div className="aa-hero__trust-header">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+              <strong>5.0</strong>
+              <span>73+ Google reviews</span>
+            </div>
+            
+            <div className="aa-hero__reviews-carousel">
+              <div className="aa-hero__reviews-track">
+                {/* First set of reviews */}
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={minoTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar">SS</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Sukhjinder Singh <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>1 month ago</span>
+                    </div>
+                  </div>
+                  <p>"Truck wash! JSA cleaned my rig, inside, outside, and everywhere always..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={whiteTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--blue">KP</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Kyri Petroudas <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>3 weeks ago</span>
+                    </div>
+                  </div>
+                  <p>"Very happy with the service. Called on short notice, Jay booked me in..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={redTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--sky">JR</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Joseph Ruffo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>2 months ago</span>
+                    </div>
+                  </div>
+                  <p>"It's a pleasure doing business with them. Always punctual..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={wheelAfter} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--orange">BB</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Brett Bugeja <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>10 months ago</span>
+                    </div>
+                  </div>
+                  <p>"Thank you for bringing my machinery back to life and ready to sell..."</p>
+                </div>
+
+                {/* Duplicate set for seamless loop */}
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={minoTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar">SS</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Sukhjinder Singh <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>1 month ago</span>
+                    </div>
+                  </div>
+                  <p>"Truck wash! JSA cleaned my rig, inside, outside, and everywhere always..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={whiteTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--blue">KP</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Kyri Petroudas <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>3 weeks ago</span>
+                    </div>
+                  </div>
+                  <p>"Very happy with the service. Called on short notice, Jay booked me in..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={redTruck2} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--sky">JR</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Joseph Ruffo <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>2 months ago</span>
+                    </div>
+                  </div>
+                  <p>"It's a pleasure doing business with them. Always punctual..."</p>
+                </div>
+
+                <div className="aa-hero__review-card">
+                  <div className="aa-hero__review-image">
+                    <img src={wheelAfter} alt="Fleet wash result" />
+                  </div>
+                  <div className="aa-hero__review-meta">
+                    <div className="aa-hero__review-avatar aa-hero__review-avatar--orange">BB</div>
+                    <div className="aa-hero__review-info">
+                      <strong>Brett Bugeja <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></strong>
+                      <div className="aa-hero__review-stars">★★★★★</div>
+                      <span>10 months ago</span>
+                    </div>
+                  </div>
+                  <p>"Thank you for bringing my machinery back to life and ready to sell..."</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -354,7 +431,9 @@ function Home() {
                     aria-label={`Get a quote for ${service.title}`}
                     className="aa-service-card__arrow"
                   >
-                    ↗
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
                   </Link>
                 </div>
               </article>
@@ -397,48 +476,77 @@ function Home() {
         </div>
       </section>
 
-      {/* ============ REVIEWS ============ */}
-      <section className="aa-reviews">
-        <div className="aa-shell">
-          <div className="aa-section-head aa-section-head--reviews">
-            <div>
-              <div className="aa-eyebrow aa-eyebrow--dark">
-                <span className="aa-eyebrow__dot" />
-                Customer proof
-              </div>
-              <h2>
-                Clean work Real operators
-              </h2>
+      {/* ============ FEATURED SERVICE DETAIL ============ */}
+      <section className="aa-featured-service">
+        <div className="aa-shell aa-featured-service__layout">
+          <div className="aa-featured-service__gallery">
+            <div className="aa-featured-service__main-image">
+              <div className="aa-featured-service__badge">01</div>
+              <img src={galleryImages[selectedImage].src} alt={galleryImages[selectedImage].alt} />
+              <button className="aa-featured-service__btn aa-featured-service__btn--most">
+                MOST BOOKED
+              </button>
             </div>
-            <div className="aa-reviews__rating">
-              <strong>5.0</strong>
-              <span>★★★★★</span>
-              <small>73+ Google reviews</small>
+            <div className="aa-featured-service__thumbnails">
+              {galleryImages.map((image, index) => (
+                <button 
+                  key={index}
+                  className={`aa-featured-service__thumb ${selectedImage === index ? 'aa-featured-service__thumb--active' : ''}`}
+                  onClick={() => setSelectedImage(index)}
+                >
+                  <img src={image.src} alt={image.alt} />
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="aa-reviews__viewport">
-            <div className="aa-reviews__track">
-              {[...testimonials, ...testimonials].map((review, index) => (
-                <article className="aa-review-card" key={`${review.name}-${index}`}>
-                  <div className="aa-review-card__image">
-                    <img src={review.image} alt="Fleet wash customer result" />
-                  </div>
-                  <div className="aa-review-card__body">
-                    <div className="aa-review-card__stars">{'★'.repeat(review.rating)}</div>
-                    <p>“{review.text}”</p>
-                    <div className="aa-review-card__person">
-                      <span className="aa-review-card__avatar">{review.initial}</span>
-                      <div>
-                        <strong>
-                          {review.name} {review.verified && <i>✓</i>}
-                        </strong>
-                        <span>{review.date}</span>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
+          <div className="aa-featured-service__content">
+            <div className="aa-eyebrow aa-eyebrow--dark">
+              <span className="aa-eyebrow__dot" />
+              CAB FIT FOR A LONG-HAUL
+            </div>
+            <h2>Exterior Truck Wash</h2>
+            <p>
+              Two-bucket safe-wash on cabs, trailers, tankers, tippers and reefers. We dissolve
+              road salt, brake dust and grime, without etching paint or aluminium.
+            </p>
+
+            <div className="aa-featured-service__features">
+              <div className="aa-featured-service__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>pH-balanced foam</span>
+              </div>
+              <div className="aa-featured-service__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Soft-touch mitts</span>
+              </div>
+              <div className="aa-featured-service__feature">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg>
+                <span>Wheel & rim detail</span>
+              </div>
+            </div>
+
+            <div className="aa-featured-service__time">
+              <span className="aa-featured-service__time-label">TYPICAL TIME</span>
+              <strong>60–90 min</strong>
+            </div>
+
+            <div className="aa-featured-service__actions">
+              <Link to="/quote" className="aa-btn aa-btn--brass">
+                Book this →
+              </Link>
+              <a href="tel:0415275751" className="aa-btn aa-btn--ghost">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                Call for a free quote
+              </a>
             </div>
           </div>
         </div>
@@ -507,6 +615,19 @@ function Home() {
           </div>
         </div>
       </section>
+
+      {/* ============ WHATSAPP FLOATING BUTTON ============ */}
+      <a 
+        href="https://wa.me/61415275751" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        className="aa-whatsapp-float"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+      </a>
     </main>
   );
 }

@@ -6,44 +6,44 @@ function FAQ() {
 
   const faqs = [
     {
-      question: 'What types of vehicles do you wash?',
-      answer: 'We wash all types of vehicles including cars, SUVs, trucks, trailers, construction equipment, cranes, bulldozers, excavators, and heavy machinery. If it needs cleaning, we can handle it.'
+      question: 'How much does a truck wash cost?',
+      answer: 'Every job is quoted on size, condition and frequency. Singles, combinations, fleets and heavy machinery are all priced individually. Send a photo and a postcode, we\'ll come back with a fixed quote in minutes.'
     },
     {
-      question: 'Do you wash heavy construction equipment?',
-      answer: 'Yes! We specialize in heavy equipment washing including bulldozers, excavators, cranes, loaders, graders, and all types of construction machinery. We have the equipment and expertise to handle the largest and dirtiest jobs.'
-    },
-    {
-      question: 'Do you offer fleet washing services?',
-      answer: 'Absolutely. We offer comprehensive fleet washing programs with scheduled service, detailed reporting, multi-vehicle discounts, and dedicated account management. Perfect for companies with multiple vehicles.'
-    },
-    {
-      question: 'Do you offer mobile washing services?',
-      answer: 'Yes, we can bring our professional washing services to your location. This is ideal for large equipment, multiple vehicles, or when you need to minimize downtime.'
-    },
-    {
-      question: 'How do I request a quote?',
-      answer: 'You can request a quote through our website by filling out the quote form, or by calling or emailing us directly. We\'ll need information about your vehicle/equipment type and your specific needs.'
-    },
-    {
-      question: 'How often should commercial equipment be washed?',
-      answer: 'It depends on usage and environment. We typically recommend monthly washing for active fleet vehicles and construction equipment. Regular washing prevents buildup, maintains appearance, and can extend equipment life.'
-    },
-    {
-      question: 'What cleaning products do you use?',
-      answer: 'We use professional-grade, environmentally responsible cleaning products specifically designed for commercial vehicles and heavy equipment. Products are chosen based on the type of equipment and level of cleaning required.'
-    },
-    {
-      question: 'How long does a typical wash take?',
-      answer: 'Time varies by vehicle size and service level. A standard truck wash takes 30-45 minutes, while heavy equipment can take 1-2 hours. Fleet services are scheduled to minimize disruption to your operations.'
-    },
-    {
-      question: 'Do you provide before and after photos?',
-      answer: 'Yes, documentation is available upon request, especially valuable for fleet managers who need to track maintenance and report to stakeholders.'
+      question: 'Do you really come to my yard?',
+      answer: 'Yes. Mobile service anywhere across Melbourne. We bring water, power, equipment and disposal. You bring the rig. Most depots, industrial parks and remote yards are fine—just send us the address and we\'ll confirm access.'
     },
     {
       question: 'Are you insured?',
-      answer: 'Yes, we carry full liability insurance and workers compensation coverage. Your equipment and property are protected while in our care.'
+      answer: 'Fully insured with public liability and workers compensation. We also carry our own water supply and disposal equipment, so there\'s no impact on your site utilities or compliance.'
+    },
+    {
+      question: 'Will the wash damage paint, decals or aluminium?',
+      answer: 'No. We use pH-balanced chemicals, two-bucket safe-wash method, and soft-touch tools. Every operator is trained on painted cabs, vinyl wraps, polished aluminum and powder coat. If we\'re not sure, we ask first.'
+    },
+    {
+      question: 'How long does a wash take?',
+      answer: 'Prime mover exterior: 60–90 minutes. Dog and tipper combo: 2–3 hours. Fleet program with multiple units: scheduled around your dispatch so clean rigs never hold up a load.'
+    },
+    {
+      question: 'Can you set up a recurring fleet program?',
+      answer: 'Yes. Weekly, fortnightly or monthly wash schedule with fixed pricing. Same crew every time, same standard, one invoice. Built for fleet operators who want consistent results without the back-and-forth.'
+    },
+    {
+      question: 'Do you wash heavy machinery?',
+      answer: 'We do. Excavators, loaders, tippers, cranes, anything that rolls or digs. Construction equipment gets the same care as road trucks—degreasing, pressure work, and a proper finish before it goes back to the job or the sale yard.'
+    },
+    {
+      question: 'What if I\'m not happy with the wash?',
+      answer: 'Walk-around inspection before we leave. If anything\'s missed, we fix it on the spot. If you spot something after we\'re gone, we come back and re-do it free. No arguments, no invoices until it\'s right.'
+    },
+    {
+      question: 'Do you provide before and after photos?',
+      answer: 'Yes, available on request. Useful for fleet records, resale listings, or just seeing the difference. We can also send progress shots during the wash if you want proof of the process.'
+    },
+    {
+      question: 'What cleaning products do you use?',
+      answer: 'Commercial-grade detergents and degreasers designed for trucks and heavy equipment. Everything is pH-balanced and safe for painted surfaces, aluminum, chrome and vinyl. No harsh acids or solvents unless specifically needed and approved first.'
     }
   ];
 
@@ -56,9 +56,8 @@ function FAQ() {
       <section className="page-hero">
         <div className="page-hero-overlay"></div>
         <div className="page-hero-content">
-          <div className="hero-badge">FAQ</div>
-          <h1>Frequently Asked Questions</h1>
-          <p>Everything you need to know about our services</p>
+          <h1>Everything you'd ask before booking.</h1>
+          <p>Common questions about pricing, service, and what to expect when you book AA Fleet Wash.</p>
         </div>
       </section>
 
