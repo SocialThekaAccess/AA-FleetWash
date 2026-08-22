@@ -66,7 +66,7 @@ function Services() {
       ],
       time: '2 hr',
       image: redTruck2,
-      liveStatus: 'Yard wash'
+      liveStatus: 'Mobile service'
     },
     {
       number: '05',

@@ -83,7 +83,7 @@ function Home() {
       name: 'Kyri Petroudas',
       initial: 'KP',
       date: '3 weeks ago',
-      text: 'Called on short notice, Jay booked me straight in and did an amazing job on the truck and trailers.'
+      text: 'Called on short notice, Mani booked me straight in and did an amazing job on the truck and trailers.'
     },
     {
       name: 'Joseph Ruffo',
@@ -115,7 +115,7 @@ function Home() {
     {
       num: '01',
       title: '8+ years on the tools',
-      description: 'Jaye and Steele have been around trucks long enough to know what aluminium needs, what paint can take, and what a hot wash will do to a wrap.'
+      description: 'Mani has been around trucks long enough to know what aluminium needs, what paint can take, and what a hot wash will do to a wrap.'
     },
     {
       num: '02',

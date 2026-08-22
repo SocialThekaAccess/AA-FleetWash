@@ -10,10 +10,10 @@ function Footer() {
           <div className="footer-brand">
             <img src={logo} alt="AA Fleet Wash" className="footer-logo" />
             <p className="footer-tagline">
-              Professional fleet and heavy equipment washing services. Trusted by commercial operators across the region.
+              Professional mobile fleet washing. We come to you — anywhere across Melbourne and surrounding areas.
             </p>
             <div className="footer-contact-info">
-              <p>📍 175 Jardin Road, Wollert, VIC 3750</p>
+              <p>📍 Mobile Service Only - We Come to Your Location</p>
               <p>📞 <a href="tel:+61489225500">+61 489 225 500</a></p>
             </div>
           </div>

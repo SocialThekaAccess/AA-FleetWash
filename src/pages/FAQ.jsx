@@ -10,8 +10,8 @@ function FAQ() {
       answer: 'Every job is quoted on size, condition and frequency. Singles, combinations, fleets and heavy machinery are all priced individually. Send a photo and a postcode, we\'ll come back with a fixed quote in minutes.'
     },
     {
-      question: 'Do you really come to my yard?',
-      answer: 'Yes. Mobile service anywhere across Melbourne. We bring water, power, equipment and disposal. You bring the rig. Most depots, industrial parks and remote yards are fine—just send us the address and we\'ll confirm access.'
+      question: 'Do you really come to my location?',
+      answer: '100% mobile service anywhere across Melbourne and regional Victoria. We bring water, power, equipment and disposal. You bring the rig. Most depots, industrial parks, job sites and parking areas work fine—just send us the address and we\'ll confirm access.'
     },
     {
       question: 'Are you insured?',
@@ -31,7 +31,7 @@ function FAQ() {
     },
     {
       question: 'Do you wash heavy machinery?',
-      answer: 'We do. Excavators, loaders, tippers, cranes, anything that rolls or digs. Construction equipment gets the same care as road trucks—degreasing, pressure work, and a proper finish before it goes back to the job or the sale yard.'
+      answer: 'We do. Excavators, loaders, tippers, cranes, anything that rolls or digs. Construction equipment gets the same care as road trucks—degreasing, pressure work, and a proper finish before it goes back to the job.'
     },
     {
       question: 'What if I\'m not happy with the wash?',

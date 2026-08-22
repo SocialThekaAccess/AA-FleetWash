@@ -98,10 +98,10 @@ function Header() {
               <a href="mailto:info@aafleetwash.com.au">info@aafleetwash.com.au</a>
             </div>
             <div className="creative-menu__address">
-              <span>Visit us</span>
+              <span>Service Area</span>
               <address>
-                175 Jardin Road<br />
-                Wollert, VIC 3750
+                Mobile Service Only<br />
+                Melbourne & Surrounding Areas
               </address>
             </div>
           </div>

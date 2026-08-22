@@ -16,7 +16,7 @@ function Contact() {
               Two minutes to a quote. <span className="blue-highlight">Fixed price upfront.</span>
             </h1>
             <p className="hero-description">
-              Pick whichever way is easiest, phone, text a photo, fill the form, or roll into our Epping yard. Most quotes go out within 7 minutes during the day.
+              Pick whichever way is easiest — phone, text a photo, or fill the form. Most quotes go out within 7 minutes during the day.
             </p>
           </div>
         </div>
@@ -76,10 +76,10 @@ function Contact() {
                   </svg>
                 </div>
                 <div className="contact-card-content">
-                  <div className="contact-card-label">YARD</div>
-                  <div className="contact-card-value">175 Jardin Road, Wollert, VIC 3750</div>
+                  <div className="contact-card-label">SERVICE AREA</div>
+                  <div className="contact-card-value">Mobile Service - We Come to You</div>
                 </div>
-                <a href="https://maps.google.com/?q=175+Jardin+Road+Wollert+VIC+3750" target="_blank" rel="noopener noreferrer" className="contact-card-btn">Get directions →</a>
+                <a href="/services" className="contact-card-btn">View service area →</a>
               </div>
 
               <div className="contact-info-grid">
@@ -91,20 +91,6 @@ function Contact() {
                   <div className="info-label">SERVICE AREA</div>
                   <div className="info-value">Greater Melbourne & Regional Victoria</div>
                 </div>
-              </div>
-
-              {/* Map */}
-              <div className="contact-map">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.123456789!2d145.0!3d-37.65!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzfCsDM5JzAwLjAiUyAxNDXCsDAwJzAwLjAiRQ!5e0!3m2!1sen!2sau!4v1234567890"
-                  width="100%"
-                  height="280"
-                  style={{ border: 0, borderRadius: '8px' }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="AA Fleet Wash Location"
-                ></iframe>
               </div>
             </div>
 
@@ -138,12 +124,12 @@ function Contact() {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="serviceType">Would you prefer that we come to your location, or would you like to drop your vehicle off at ours?</label>
+                  <label htmlFor="serviceType">Where would you like us to wash your vehicle?</label>
                   <select id="serviceType" name="serviceType" required>
                     <option value="">Please select</option>
-                    <option value="mobile">Mobile service - We come to you</option>
-                    <option value="dropoff">Drop-off at Epping yard</option>
-                    <option value="either">Either works for me</option>
+                    <option value="depot">At my depot/yard</option>
+                    <option value="jobsite">At job site</option>
+                    <option value="other">Other location</option>
                   </select>
                 </div>
 

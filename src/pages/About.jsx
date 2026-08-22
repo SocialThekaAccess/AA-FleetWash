@@ -44,7 +44,7 @@ function About() {
                 AA Fleet Wash started because we got sick of watching detailers treat prime movers like they're washing a Camry. Aluminum needs care. Paint needs pH-balanced foam. Vinyl wraps can't take scorching hot water.
               </p>
               <p>
-                Jaye and Steele (that's us) have been around trucks long enough to know what works and what wrecks resale value. We're still on the tools every day, so every rig gets the attention it would if it were ours.
+                Mani has been around trucks long enough to know what works and what wrecks resale value. Still on the tools every day, so every rig gets the attention it would if it were his own.
               </p>
             </div>
           </div>
@@ -77,7 +77,7 @@ function About() {
             <div className="value-card">
               <div className="value-number">04</div>
               <h3>Around your dispatch</h3>
-              <p>After-hours, weekends, depot windows, remote yards. We work when it suits you, so a clean rig never costs you a load.</p>
+              <p>After-hours, weekends, at your depot or job site. We work when it suits you, so a clean rig never costs you a load.</p>
             </div>
           </div>
         </div>
