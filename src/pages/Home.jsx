@@ -130,13 +130,13 @@ function Home() {
     {
       num: '04',
       title: 'Built around your dispatch',
-      description: 'After-hours, weekends, depot windows or remote yards. A clean rig should never cost you a load.'
+      description: 'After-hours, weekends, at your depot or job site. A clean rig should never cost you a load.'
     }
   ];
 
   const process = [
     { num: '01', title: 'Book your slot', description: 'Call, text or use the docket form. Tell us what you drive and where it\'s parked.' },
-    { num: '02', title: 'We come to you', description: 'Mobile at your depot, or drop in at our Epping yard — whichever keeps you moving.' },
+    { num: '02', title: 'We come to you', description: 'Fully mobile service — we bring everything to your location. No need to move your rig.' },
     { num: '03', title: 'Walk-around sign-off', description: 'We inspect the result together. Anything missed gets fixed on the spot, free.' }
   ];
 
@@ -164,7 +164,7 @@ function Home() {
               Fleet <span>rolling</span>
             </h1>
             <p>
-              Mobile and depot truck washing for operators who can't afford downtime.
+              Mobile onsite truck washing for operators who can't afford downtime.
               Prime movers, trailers, tippers and reefers — cleaned properly, signed off
               before we go.
             </p>
@@ -454,7 +454,7 @@ function Home() {
 
             <div className="feature__actions">
               <Link to="/quote" className="btn-plate">Book this <i>→</i></Link>
-              <a href="tel:0415275751" className="btn-outline btn-outline--dark">
+              <a href="tel:+61489225500" className="btn-outline btn-outline--dark">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                 </svg>
@@ -485,7 +485,7 @@ function Home() {
               },
               {
                 q: 'Do you come to our depot or do we come to you?',
-                a: 'Both! We offer mobile washing at your depot, yard, or rest stops. You can also drop in at our Epping facility. We work around your dispatch schedule.'
+                a: 'We come to you! 100% mobile service at your depot, yard, job site, or rest stops. We bring all water, power, and equipment. No need to move your vehicles.'
               },
               {
                 q: 'What products do you use? Are they safe?',
@@ -589,7 +589,7 @@ function Home() {
 
       {/* ============ WHATSAPP FLOATING BUTTON ============ */}
       <a
-        href="https://wa.me/61415275751"
+        href="https://wa.me/61489225500"
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp-float"
