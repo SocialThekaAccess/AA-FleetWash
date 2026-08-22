@@ -374,8 +374,8 @@
 
 /* Clickable Scroll Indicator Button */
 .docket-scroll-indicator {
-  position: sticky;
-  bottom: 20px;
+  position: absolute;
+  bottom: 30px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -408,20 +408,20 @@
 
 @keyframes bounce-scroll {
   0%, 100% {
-    bottom: 20px;
+    bottom: 30px;
   }
   50% {
-    bottom: 28px;
+    bottom: 38px;
   }
 }
 
 .docket-card__logo {
   position: absolute;
-  top: 20px;
+  top: 16px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100px;
-  height: 100px;
+  width: 90px;
+  height: auto;
   object-fit: contain;
   z-index: 10;
   filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
@@ -432,7 +432,7 @@
 }
 
 .docket-card__head {
-  padding: 60px 32px 24px;
+  padding: 52px 28px 18px;
   text-align: center;
   position: relative;
 }
@@ -450,22 +450,21 @@
 .docket-card__head span {
   display: inline-block;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 0.15em;
   color: #087cff;
   background: rgba(8, 124, 255, 0.1);
-  padding: 6px 14px;
+  padding: 5px 12px;
   border-radius: 20px;
-  text-transform: uppercase;
 }
 
 .docket-card__head h2 {
-  margin-top: 14px;
-  font-size: 26px;
+  margin-top: 10px;
+  font-size: 22px;
   font-weight: 800;
+  line-height: 1.2;
   color: var(--text);
-  letter-spacing: -0.5px;
 }
 
 .docket-card__head p {
@@ -475,12 +474,13 @@
   color: var(--muted);
 }
 
+
 #quoteForm {
   padding: 32px 32px 36px;
 }
 
 .field {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   position: relative;
 }
 
