@@ -1667,3 +1667,158 @@
     justify-content: center;
   }
 }
+
+
+/* ============================= 
+   HEAVY MACHINERY SECTION - SEXY 
+============================= */
+
+.about-machinery {
+  padding: 100px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-machinery::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(8, 124, 255, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.machinery-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.machinery-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(8, 124, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.machinery-image:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 80px rgba(8, 124, 255, 0.25);
+}
+
+.machinery-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.machinery-image:hover img {
+  transform: scale(1.05);
+}
+
+.machinery-badge {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  background: linear-gradient(135deg, #087cff 0%, #0064d8 100%);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 15px rgba(8, 124, 255, 0.4);
+  z-index: 10;
+}
+
+.machinery-content {
+  padding: 0 40px 0 0;
+}
+
+.machinery-content h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  line-height: 1.15;
+  margin: 16px 0 24px;
+  color: #1a1f36;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.machinery-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #5b6572;
+  margin-bottom: 32px;
+}
+
+.machinery-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.machinery-features li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  font-size: 16px;
+  color: #2d3748;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(8, 124, 255, 0.1);
+}
+
+.machinery-features li:last-child {
+  border-bottom: none;
+}
+
+.machinery-features li svg {
+  width: 24px;
+  height: 24px;
+  color: #087cff;
+  flex-shrink: 0;
+}
+
+.btn-primary-modern {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #087cff 0%, #0064d8 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 16px;
+  box-shadow: 0 8px 24px rgba(8, 124, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-primary-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(8, 124, 255, 0.4);
+  background: linear-gradient(135deg, #2e92ff 0%, #087cff 100%);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .machinery-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .machinery-content {
+    padding: 0;
+  }
+
+  .machinery-image {
+    order: -1;
+  }
+}

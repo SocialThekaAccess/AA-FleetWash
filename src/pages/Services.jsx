@@ -7,6 +7,8 @@ import whiteTruck3 from '../assets/truckwhite3.png';
 import minoTruck1 from '../assets/MinoTruck1.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import truck1 from '../assets/Truck1.png';
+import digger from '../assets/Diggerr.png';
+import craneWash from '../assets/CraneWash.png';
 import './Services.css';
 
 function Services() {
@@ -86,15 +88,29 @@ function Services() {
       number: '06',
       eyebrow: 'DIRT THAT DOESN\'T BUDGET.',
       title: 'Heavy Machinery Wash',
-      description: 'Purpose-built for loaders, excavators, graders, bulldozers and cranes. Hot-water pressure washing that strips mud, concrete and builder\'s dust without damaging hydraulics or decals.',
+      description: 'Purpose-built for loaders, excavators, graders, bulldozers and diggers. Hot-water pressure washing that strips mud, concrete and builder\'s dust without damaging hydraulics or decals.',
       features: [
         'High-pressure hot water',
         'Hydraulic-safe',
         'Undercarriage clean'
       ],
       time: '90–180 min',
-      image: minoTruck2,
-      liveStatus: 'Machinery clean'
+      image: digger,
+      liveStatus: 'Excavator clean'
+    },
+    {
+      number: '07',
+      eyebrow: 'REACH NEW HEIGHTS.',
+      title: 'Crane Washing Service',
+      description: 'Specialized cleaning for mobile cranes, tower cranes and boom lifts. We clean the cab, boom, chassis and undercarriage — safely removing grease, dust and construction grime.',
+      features: [
+        'Boom & chassis detail',
+        'Safe on hydraulics',
+        'Job-ready finish'
+      ],
+      time: '2–3 hr',
+      image: craneWash,
+      liveStatus: 'Crane detail'
     }
   ];
 

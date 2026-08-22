@@ -3,6 +3,7 @@ import truck2 from '../assets/Truck2.png';
 import redTruck from '../assets/RedTruck1.png';
 import kenworthimg from '../assets/kenworthsideprofile.png';
 import logo from '../assets/AA-FleetWashbg.png';
+import craneWash from '../assets/CraneWash.png';
 import './SharedPages.css';
 
 function About() {
@@ -111,6 +112,46 @@ function About() {
             </div>
             <div className="proof-image">
               <img src={redTruck} alt="Clean Truck" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Heavy Machinery Section - NEW SEXY SECTION */}
+      <section className="about-machinery">
+        <div className="section-container">
+          <div className="machinery-grid">
+            <div className="machinery-image">
+              <img src={craneWash} alt="Crane Washing Service" />
+              <div className="machinery-badge">HEAVY MACHINERY</div>
+            </div>
+            <div className="machinery-content">
+              <span className="section-badge">● BEYOND TRUCKS</span>
+              <h2>We wash what others won't touch.</h2>
+              <p>
+                Cranes, excavators, loaders, tippers — if it moves dirt or lifts weight, we know how to clean it properly. Construction equipment needs the same care as road trucks.
+              </p>
+              <ul className="machinery-features">
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  Degreasing for hydraulics & undercarriage
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  Safe on decals, paint & powder coat
+                </li>
+                <li>
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <path d="M20 6 9 17l-5-5" />
+                  </svg>
+                  Ready for resale or back to the job
+                </li>
+              </ul>
+              <a href="/quote" className="btn-primary-modern">Get a machinery quote →</a>
             </div>
           </div>
         </div>

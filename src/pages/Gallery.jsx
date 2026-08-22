@@ -13,6 +13,10 @@ import cornerTruck from '../assets/CornorTruck.png';
 import rightCornerTruck from '../assets/RightCornorTruck.png';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
+import digger from '../assets/Diggerr.png';
+import craneWash from '../assets/CraneWash.png';
+import towerCrane from '../assets/ToweerCrane.png';
+import truckWashImage from '../assets/TruckWashimage.png';
 
 import './Gallery.css';
 
@@ -106,6 +110,30 @@ function Gallery() {
       title: 'Fleet Operator',
       subtitle: 'Multi-Vehicle Service',
       category: 'Fleet',
+    },
+    {
+      image: digger,
+      title: 'Heavy Machinery',
+      subtitle: 'Construction Equipment',
+      category: 'Trucks',
+    },
+    {
+      image: craneWash,
+      title: 'Crane Washing',
+      subtitle: 'Professional Crane Detail',
+      category: 'Trucks',
+    },
+    {
+      image: towerCrane,
+      title: 'Tower Crane Service',
+      subtitle: 'High-Reach Cleaning',
+      category: 'Trucks',
+    },
+    {
+      image: truckWashImage,
+      title: 'Professional Truck Wash',
+      subtitle: 'On-Site Service',
+      category: 'Detailing',
     },
   ];
 
