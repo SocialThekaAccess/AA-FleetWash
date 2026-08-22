@@ -22,9 +22,29 @@ function Home() {
   const [sliderPos, setSliderPos] = useState(50);
   const [activeThumb, setActiveThumb] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const formRef = useRef(null);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  const handleScrollIndicatorClick = () => {
+    if (formRef.current) {
+      formRef.current.scrollBy({
+        top: 200,
+        behavior: 'smooth'
+      });
+      setShowScrollIndicator(false);
+    }
+  };
+
+  const handleFormScroll = (e) => {
+    const element = e.target;
+    const isAtBottom = element.scrollHeight - element.scrollTop <= element.clientHeight + 50;
+    if (isAtBottom) {
+      setShowScrollIndicator(false);
+    }
   };
 
   const gallery = [
@@ -195,9 +215,15 @@ function Home() {
           </div>
 
           {/* JOB DOCKET FORM */}
-          <div className="docket-card" id="quote">
+          <div 
+            className={`docket-card ${!showScrollIndicator ? 'scrolled-bottom' : ''}`} 
+            id="quote"
+            ref={formRef}
+            onScroll={handleFormScroll}
+          >
             <img src={logo} alt="AA Fleet Wash" className="docket-card__logo" />
             <span className="docket-card__clip" aria-hidden="true" />
+            
             <div className="docket-card__head">
               <span>REQUEST A QUOTE</span>
               <h2>Tell us about the job</h2>
@@ -243,13 +269,24 @@ function Home() {
               </div>
 
               <button type="submit" className="docket-submit">
-                Send the job sheet <i>→</i>
+                Get Your Free Quote <i>→</i>
               </button>
 
               <p className="docket-fine">
                 Your details are only used to respond to this enquiry. <a href="#">Privacy policy</a>
               </p>
             </form>
+            
+            {/* Scroll Indicator - at bottom */}
+            {showScrollIndicator && (
+              <button 
+                className="docket-scroll-indicator"
+                onClick={handleScrollIndicatorClick}
+                aria-label="Scroll down for more"
+              >
+                ↓
+              </button>
+            )}
           </div>
         </div>
       </section>

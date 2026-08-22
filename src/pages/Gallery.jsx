@@ -131,24 +131,19 @@ function Gallery() {
     <main className="gallery-page">
 
       {/* HEADER */}
-      <section className="gallery-top">
-        <a href="/" className="gallery-logo">
-          <img src={logo} alt="AA Fleet Wash" />
-        </a>
-        
+      <section className="gallery-top">        
         <div className="gallery-heading">
           <div className="gallery-label">
-            <span />
-            OUR FLEET
+            <span className="gallery-label-dot">●</span>
+            OUR WORK
           </div>
 
           <h1>
-            Built to Perform  Ready for Every Mile
+            Real Trucks.<br/><span className="gallery-heading-highlight">Real Results.</span>
           </h1>
 
           <p>
-            Explore our professionally maintained fleet and
-            premium truck washing results.
+            Professional fleet washing that keeps your trucks looking sharp and running proud. See the difference we make for operators across Melbourne.
           </p>
         </div>
 

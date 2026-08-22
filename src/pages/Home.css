@@ -350,7 +350,7 @@
 
 .docket-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.75);
   backdrop-filter: blur(20px);
   border-radius: 24px;
   overflow: visible;
@@ -360,9 +360,59 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
   transform: rotate(0deg);
   border: 1px solid rgba(255, 255, 255, 0.2);
-    max-height: 88vh;
+  max-height: 88vh;
   padding-top: 34px;
-    overflow-y: auto;
+  overflow-y: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.docket-card::-webkit-scrollbar {
+  display: none;
+}
+
+/* Clickable Scroll Indicator Button */
+.docket-scroll-indicator {
+  position: sticky;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #087cff 0%, #0064d8 100%);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 100;
+  box-shadow: 0 6px 16px rgba(8, 124, 255, 0.5);
+  animation: bounce-scroll 2s ease-in-out infinite;
+  transition: all 0.3s ease;
+}
+
+.docket-scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 8px 20px rgba(8, 124, 255, 0.6);
+  background: linear-gradient(135deg, #2e92ff 0%, #087cff 100%);
+}
+
+.docket-scroll-indicator:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+@keyframes bounce-scroll {
+  0%, 100% {
+    bottom: 20px;
+  }
+  50% {
+    bottom: 28px;
+  }
 }
 
 .docket-card__logo {
@@ -1079,7 +1129,7 @@
 
 .reel {
   padding: 120px 0;
-  background: linear-gradient(180deg, #0a0e14 0%, #0f1419 100%);
+  background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1112,14 +1162,10 @@
 .reel__head h2 {
   font-size: clamp(36px, 5vw, 52px);
   font-weight: 900;
-  color: var(--white);
+  color: #1a1f36;
   letter-spacing: -0.03em;
   text-transform: uppercase;
   line-height: 1.1;
-  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 
 .reel__track {
@@ -1129,7 +1175,9 @@
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--orange) rgba(255, 255, 255, 0.1);
-  padding: 20px clamp(20px, 5vw, 64px) 40px;
+  padding: 20px 0 40px;
+  margin: 0 auto;
+  max-width: 1400px;
 }
 
 .reel__track::-webkit-scrollbar {
@@ -1152,12 +1200,14 @@
 
 .reel__track {
   display: flex;
-  gap: 28px;
+  gap: 24px;
+  padding-left: clamp(20px, 5vw, 64px);
+  padding-right: clamp(20px, 5vw, 64px);
 }
 
 .reel__card {
   position: relative;
-  flex: 0 0 min(360px, 85vw);
+  flex: 0 0 min(380px, 85vw);
   height: 640px;
   overflow: hidden;
   background: #000;
