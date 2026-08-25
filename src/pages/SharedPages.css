@@ -1459,13 +1459,13 @@
 
 /* Proof Section */
 .about-proof {
-  padding: 120px 40px;
-  background: #f1eee5;
+  padding: 100px 40px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
 }
 
 .proof-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 1fr;
   gap: 80px;
   align-items: center;
   max-width: 1320px;
@@ -1474,50 +1474,61 @@
 
 .proof-content .section-badge {
   display: inline-block;
-  font-family: 'Courier New', monospace;
-  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
   letter-spacing: 2.5px;
   font-weight: 700;
-  color: #0064d8;
+  color: #087cff;
   margin-bottom: 20px;
   text-transform: uppercase;
 }
 
 .proof-content h2 {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  margin: 0 0 40px;
-  color: #14181c;
-  letter-spacing: -0.5px;
+  font-size: 44px;
+  font-weight: 800;
+  margin: 0 0 50px;
+  color: #0b0f14;
+  letter-spacing: -1px;
   line-height: 1.15;
 }
 
 .stats-list {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px 32px;
 }
 
 .stat-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-left: 18px;
-  border-left: 2px solid #087cff;
+  gap: 8px;
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 16px;
+  border-left: 3px solid #087cff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(8, 124, 255, 0.15);
 }
 
 .stat-number {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  color: #14181c;
-  letter-spacing: -0.5px;
+  font-size: 38px;
+  font-weight: 800;
+  color: #087cff;
+  letter-spacing: -1px;
+  line-height: 1;
 }
 
 .stat-label {
-  font-size: 16px;
-  color: #565f68;
+  font-size: 15px;
+  color: #5b6572;
+  line-height: 1.5;
   font-weight: 500;
 }
 

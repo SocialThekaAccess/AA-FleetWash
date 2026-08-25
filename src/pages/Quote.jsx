@@ -8,7 +8,7 @@ function Quote() {
         <div className="page-hero-content">
           <div className="hero-badge">GET A QUOTE</div>
           <h1>Let's Get Your Fleet Clean</h1>
-          <p>Free quotes for all services — no obligation</p>
+          <p>Free quotes for all services, no obligation</p>
         </div>
       </section>
 

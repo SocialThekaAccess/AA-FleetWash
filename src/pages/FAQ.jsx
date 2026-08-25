@@ -11,7 +11,7 @@ function FAQ() {
     },
     {
       question: 'Do you really come to my location?',
-      answer: '100% mobile service anywhere across Melbourne and regional Victoria. We bring water, power, equipment and disposal. You bring the rig. Most depots, industrial parks, job sites and parking areas work fine—just send us the address and we\'ll confirm access.'
+      answer: '100% mobile service anywhere across Melbourne and regional Victoria. We bring water, power, equipment and disposal. You bring the rig. Most depots, industrial parks, job sites and parking areas work fine, just send us the address and we\'ll confirm access.'
     },
     {
       question: 'Are you insured?',
@@ -23,7 +23,7 @@ function FAQ() {
     },
     {
       question: 'How long does a wash take?',
-      answer: 'Prime mover exterior: 60–90 minutes. Dog and tipper combo: 2–3 hours. Fleet program with multiple units: scheduled around your dispatch so clean rigs never hold up a load.'
+      answer: 'Prime mover exterior: 60 to 90 minutes. Dog and tipper combo: 2 to 3 hours. Fleet program with multiple units: scheduled around your dispatch so clean rigs never hold up a load.'
     },
     {
       question: 'Can you set up a recurring fleet program?',
@@ -31,7 +31,7 @@ function FAQ() {
     },
     {
       question: 'Do you wash heavy machinery?',
-      answer: 'We do. Excavators, loaders, tippers, cranes, anything that rolls or digs. Construction equipment gets the same care as road trucks—degreasing, pressure work, and a proper finish before it goes back to the job.'
+      answer: 'We do. Excavators, loaders, tippers, cranes, anything that rolls or digs. Construction equipment gets the same care as road trucks, degreasing, pressure work, and a proper finish before it goes back to the job.'
     },
     {
       question: 'What if I\'m not happy with the wash?',

@@ -16,7 +16,7 @@ function Contact() {
               Two minutes to a quote. <span className="blue-highlight">Fixed price upfront.</span>
             </h1>
             <p className="hero-description">
-              Pick whichever way is easiest — phone, text a photo, or fill the form. Most quotes go out within 7 minutes during the day.
+              Pick whichever way is easiest, phone, text a photo, or fill the form. Most quotes go out within 7 minutes during the day.
             </p>
           </div>
         </div>

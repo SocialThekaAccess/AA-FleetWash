@@ -10,7 +10,7 @@ function Footer() {
           <div className="footer-brand">
             <img src={logo} alt="AA Fleet Wash" className="footer-logo" />
             <p className="footer-tagline">
-              Professional mobile fleet washing. We come to you — anywhere across Melbourne and surrounding areas.
+              Professional mobile fleet washing. We come to you, anywhere across Melbourne and surrounding areas.
             </p>
             <div className="footer-contact-info">
               <p>📍 Mobile Service Only - We Come to Your Location</p>
@@ -22,12 +22,13 @@ function Footer() {
             <div className="footer-column">
               <h4>SERVICES</h4>
               <ul>
-                <li><Link to="/services">Prime Mover Detail</Link></li>
-                <li><Link to="/services">Engine Bay Clean</Link></li>
-                <li><Link to="/services">Dog & Tipper Clean</Link></li>
-                <li><Link to="/services">Full Truck Wash</Link></li>
-                <li><Link to="/services">Heavy Machinery</Link></li>
-                <li><Link to="/services">Fleet Services</Link></li>
+                <li><Link to="/services#prime-mover">Exterior Truck Wash</Link></li>
+                <li><Link to="/services#engine-bay">Interior Detail</Link></li>
+                <li><Link to="/services#dog-tipper">Engine Bay Clean</Link></li>
+                <li><Link to="/services#full-truck">Wax & Paint Protection</Link></li>
+                <li><Link to="/services#fleet-services">Fleet Washing Program</Link></li>
+                <li><Link to="/services#heavy-machinery">Heavy Machinery Wash</Link></li>
+                <li><Link to="/services#crane-wash">Crane Washing Service</Link></li>
               </ul>
             </div>
 
@@ -37,7 +38,6 @@ function Footer() {
                 <li><Link to="/equipment">Equipment</Link></li>
                 <li><Link to="/about">About Us</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
-                <li><Link to="/faq">FAQ</Link></li>
               </ul>
             </div>
 

@@ -1,4 +1,5 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import redTruck from '../assets/RedTruck1.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
@@ -12,8 +13,24 @@ import craneWash from '../assets/CraneWash.png';
 import './Services.css';
 
 function Services() {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Check if there's a hash in the URL
+    if (location.hash) {
+      // Small delay to ensure DOM is ready
+      setTimeout(() => {
+        const id = location.hash.replace('#', '');
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    }
+  }, [location]);
   const services = [
     {
+      id: 'prime-mover',
       number: '01',
       badge: 'MOST BOOKED',
       eyebrow: 'THE FULL BODY SHINE.',
@@ -24,11 +41,12 @@ function Services() {
         'Soft-touch mitts',
         'Wheel & rim detail'
       ],
-      time: '60–90 min',
+      time: '60 to 90 min',
       image: redTruck,
       liveStatus: 'Prime mover detail'
     },
     {
+      id: 'engine-bay',
       number: '02',
       eyebrow: 'CAB FIT FOR A LONG-HAUL.',
       title: 'Interior Detail',
@@ -38,11 +56,12 @@ function Services() {
         'Leather conditioning',
         'Odour treatment'
       ],
-      time: '90–120 min',
+      time: '90 to 120 min',
       image: whiteTruck1,
       liveStatus: 'Truck + trailer'
     },
     {
+      id: 'dog-tipper',
       number: '03',
       eyebrow: 'MECHANIC-READY IN AN HOUR.',
       title: 'Engine Bay Clean',
@@ -57,6 +76,7 @@ function Services() {
       liveStatus: 'Heavy combo wash'
     },
     {
+      id: 'full-truck',
       number: '04',
       eyebrow: 'LOCK THE SHINE IN.',
       title: 'Wax & Paint Protection',
@@ -71,6 +91,7 @@ function Services() {
       liveStatus: 'Mobile service'
     },
     {
+      id: 'fleet-services',
       number: '05',
       eyebrow: 'FLEET-SCALE LOGISTICS.',
       title: 'Fleet Washing Program',
@@ -85,6 +106,7 @@ function Services() {
       liveStatus: 'Fleet program'
     },
     {
+      id: 'heavy-machinery',
       number: '06',
       eyebrow: 'DIRT THAT DOESN\'T BUDGET.',
       title: 'Heavy Machinery Wash',
@@ -94,21 +116,22 @@ function Services() {
         'Hydraulic-safe',
         'Undercarriage clean'
       ],
-      time: '90–180 min',
+      time: '90 to 180 min',
       image: digger,
       liveStatus: 'Excavator clean'
     },
     {
+      id: 'crane-wash',
       number: '07',
       eyebrow: 'REACH NEW HEIGHTS.',
       title: 'Crane Washing Service',
-      description: 'Specialized cleaning for mobile cranes, tower cranes and boom lifts. We clean the cab, boom, chassis and undercarriage — safely removing grease, dust and construction grime.',
+      description: 'Specialized cleaning for mobile cranes, tower cranes and boom lifts. We clean the cab, boom, chassis and undercarriage, safely removing grease, dust and construction grime.',
       features: [
         'Boom & chassis detail',
         'Safe on hydraulics',
         'Job-ready finish'
       ],
-      time: '2–3 hr',
+      time: '2 to 3 hr',
       image: craneWash,
       liveStatus: 'Crane detail'
     }
@@ -120,7 +143,7 @@ function Services() {
       <section className="services-list-jsa">
         <div className="section-container">
           {services.map((service, index) => (
-            <div key={index} className={`service-block ${index % 2 === 0 ? 'image-left' : 'image-right'}`}>
+            <div key={index} id={service.id} className={`service-block ${index % 2 === 0 ? 'image-left' : 'image-right'}`}>
               {/* Image Side */}
               <div className="service-block-image">
                 <div className="service-number-badge">{service.number}</div>
@@ -128,11 +151,6 @@ function Services() {
                   <div className="service-most-booked-badge">{service.badge}</div>
                 )}
                 <img src={service.image} alt={service.title} />
-                <div className="service-live-status">
-                  <span className="live-dot"></span>
-                  <span className="live-label">LIVE</span>
-                  <span className="live-service">{service.liveStatus}</span>
-                </div>
               </div>
 
               {/* Content Side */}

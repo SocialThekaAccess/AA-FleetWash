@@ -25,7 +25,7 @@ function About() {
             <span className="section-badge">● ABOUT AA FLEET WASH</span>
             <h1>We're not the cheapest <br/> We're the most thorough </h1>
             <p className="hero-subtitle">
-              8+ years washing trucks that earn their keep. Owner-operated, same crew, same standards—whether it's your first wash or your hundredth.
+              8+ years washing trucks that earn their keep. Owner-operated, same crew, same standards, whether it's your first wash or your hundredth.
             </p>
           </div>
         </div>
@@ -129,7 +129,7 @@ function About() {
               <span className="section-badge">● BEYOND TRUCKS</span>
               <h2>We wash what others won't touch.</h2>
               <p>
-                Cranes, excavators, loaders, tippers — if it moves dirt or lifts weight, we know how to clean it properly. Construction equipment needs the same care as road trucks.
+                Cranes, excavators, loaders, tippers, if it moves dirt or lifts weight, we know how to clean it properly. Construction equipment needs the same care as road trucks.
               </p>
               <ul className="machinery-features">
                 <li>

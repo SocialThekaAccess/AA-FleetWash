@@ -81,7 +81,7 @@ function Home() {
       tag: 'FW',
       image: redTruck,
       title: 'Full truck wash',
-      description: 'Cab, chassis and undercarriage — the whole rig, done properly.'
+      description: 'Cab, chassis and undercarriage, the whole rig, done properly.'
     },
     {
       code: '05',
@@ -109,7 +109,7 @@ function Home() {
       name: 'Joseph Ruffo',
       initial: 'JR',
       date: '2 months ago',
-      text: 'A pleasure doing business with them — always punctual, and the detailing is brilliant.'
+      text: 'A pleasure doing business with them, always punctual, and the detailing is brilliant.'
     },
     {
       name: 'Brett Bugeja',
@@ -121,7 +121,7 @@ function Home() {
       name: 'Michael Chen',
       initial: 'MC',
       date: '4 months ago',
-      text: 'The fleet program has been outstanding — same quality every wash, and they work around dispatch.'
+      text: 'The fleet program has been outstanding, same quality every wash, and they work around dispatch.'
     },
     {
       name: 'Sarah Mitchell',
@@ -145,7 +145,7 @@ function Home() {
     {
       num: '03',
       title: 'Sign-off before we leave',
-      description: 'Every job ends with a walk-around. If anything isn\'t right, we redo it on the spot — no callback needed.'
+      description: 'Every job ends with a walk-around. If anything isn\'t right, we redo it on the spot, no callback needed.'
     },
     {
       num: '04',
@@ -156,7 +156,7 @@ function Home() {
 
   const process = [
     { num: '01', title: 'Book your slot', description: 'Call, text or use the docket form. Tell us what you drive and where it\'s parked.' },
-    { num: '02', title: 'We come to you', description: 'Fully mobile service — we bring everything to your location. No need to move your rig.' },
+    { num: '02', title: 'We come to you', description: 'Fully mobile service, we bring everything to your location. No need to move your rig.' },
     { num: '03', title: 'Walk-around sign-off', description: 'We inspect the result together. Anything missed gets fixed on the spot, free.' }
   ];
 
@@ -175,41 +175,43 @@ function Home() {
 
         <div className="hero-shell">
           <div className="hero-copy">
-            <div className="docket-tag">
+            {/* <div className="docket-tag">
               <span className="docket-tag__dot" />
               JOB SHEET NO. AA-2026
-            </div>
+            </div> */}  
             <h1>
               Grime off
               Fleet <span>rolling</span>
             </h1>
             <p>
               Mobile onsite truck washing for operators who can't afford downtime.
-              Prime movers, trailers, tippers and reefers — cleaned properly, signed off
+              Prime movers, trailers, tippers and reefers, cleaned properly, signed off
               before we go.
             </p>
 
-            <div className="hero-actions">
-              <Link to="/quote" className="btn-plate">
-                Get a free quote <i>→</i>
-              </Link>
-              <Link to="/services" className="btn-outline">
-                See the services
-              </Link>
-            </div>
+            <div className="hero-bottom">
+              <div className="hero-actions">
+                <Link to="/quote" className="btn-plate">
+                  Get a free quote <i>→</i>
+                </Link>
+                <Link to="/services" className="btn-outline">
+                  See the services
+                </Link>
+              </div>
 
-            <div className="hero-strip">
-              <div className="hero-strip__item">
-                <strong>300+</strong>
-                <span>fleets serviced</span>
-              </div>
-              <div className="hero-strip__item">
-                <strong>8+ yrs</strong>
-                <span>on the tools</span>
-              </div>
-              <div className="hero-strip__item">
-                <strong>5.0</strong>
-                <span>from 73+ reviews</span>
+              <div className="hero-strip">
+                <div className="hero-strip__item">
+                  <strong>300+</strong>
+                  <span>fleets serviced</span>
+                </div>
+                <div className="hero-strip__item">
+                  <strong>8+ yrs</strong>
+                  <span>on the tools</span>
+                </div>
+                <div className="hero-strip__item">
+                  <strong>5.0</strong>
+                  <span>from 73+ reviews</span>
+                </div>
               </div>
             </div>
           </div>
@@ -227,7 +229,6 @@ function Home() {
             <div className="docket-card__head">
               <span>REQUEST A QUOTE</span>
               <h2>Tell us about the job</h2>
-              <p>Fill this in and we'll call you back — usually same day.</p>
             </div>
 
             <form id="quoteForm">
@@ -252,7 +253,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="field">
+              <div className="field field--no-label">
                 <select required defaultValue="">
                   <option value="" disabled>Select a service</option>
                   <option>Truck washing</option>
@@ -260,7 +261,6 @@ function Home() {
                   <option>Trailer washing</option>
                   <option>Commercial vehicle washing</option>
                 </select>
-                <label>Service required</label>
               </div>
 
               <div className="field">
@@ -269,24 +269,13 @@ function Home() {
               </div>
 
               <button type="submit" className="docket-submit">
-                Get Your Free Quote <i>→</i>
+                GET YOUR FREE QUOTE
               </button>
 
               <p className="docket-fine">
                 Your details are only used to respond to this enquiry. <a href="#">Privacy policy</a>
               </p>
             </form>
-            
-            {/* Scroll Indicator - at bottom */}
-            {showScrollIndicator && (
-              <button 
-                className="docket-scroll-indicator"
-                onClick={handleScrollIndicatorClick}
-                aria-label="Scroll down for more"
-              >
-                ↓
-              </button>
-            )}
           </div>
         </div>
       </section>
@@ -304,7 +293,7 @@ function Home() {
             </h2>
             <p>
               Road film, brake dust and diesel grime build up fast on a working rig.
-              Drag the slider — this is what a proper two-bucket wash and rim detail
+              Drag the slider, this is what a proper two-bucket wash and rim detail
               actually does, not just what it looks like from a distance.
             </p>
             <a href="tel:+61489225500" className="reveal__link">
@@ -357,25 +346,27 @@ function Home() {
             </div>
           </div>
 
-          <div className="services__list">
+          <div className="services__grid">
             {services.map((service) => (
-              <article className="job-row" key={service.code}>
-                <div className="job-row__num">{service.code}</div>
-                <div className="job-row__media">
+              <div className="service-card" key={service.code}>
+                <div className="service-card__image">
                   <img src={service.image} alt={service.title} />
-                  {service.badge && <span className="job-row__badge">{service.badge}</span>}
+                  <div className="service-card__overlay">
+                    <h3>{service.title}</h3>
+                    <p>{service.description}</p>
+                  </div>
                 </div>
-                <div className="job-row__body">
-                  <span className="job-row__tag">{service.tag}</span>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                <div className="service-card__title">
+                  <div className="service-card__title-text">
+                    <h3>{service.title}</h3>
+                  </div>
+                  <a href="tel:+61489225500" className="service-card__call" onClick={(e) => e.stopPropagation()}>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                  </a>
                 </div>
-                <Link to="/quote" aria-label={`Get a quote for ${service.title}`} className="job-row__arrow">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </Link>
-              </article>
+              </div>
             ))}
           </div>
         </div>
@@ -449,7 +440,6 @@ function Home() {
         <div className="shell feature__layout">
           <div className="feature__gallery">
             <div className="feature__main">
-              <span className="feature__badge">01</span>
               <img src={gallery[activeThumb].src} alt={gallery[activeThumb].alt} />
               <span className="feature__pill">MOST BOOKED</span>
             </div>
@@ -486,7 +476,7 @@ function Home() {
 
             <div className="feature__time">
               <span>TYPICAL TIME</span>
-              <strong>60–90 min</strong>
+              <strong>60 to 90 min</strong>
             </div>
 
             <div className="feature__actions">
