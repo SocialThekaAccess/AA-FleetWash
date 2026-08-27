@@ -420,7 +420,7 @@ function GalleryCard({ item, className = '', onClick, priority = false }) {
 
   return (
     <article
-      className={`gallery-card ${className} ${item.fit === 'contain' ? 'contain' : ''}`}
+      className={`gallery-card ${className}`}
       onClick={onClick}
     >
       <div className="gallery-image-wrapper">
@@ -428,13 +428,10 @@ function GalleryCard({ item, className = '', onClick, priority = false }) {
           src={item.image}
           alt={item.title}
           className="gallery-image"
-          loading={priority ? 'eager' : 'lazy'}
         />
       </div>
 
       <div className="gallery-gradient" />
-
-      <span className="gallery-badge">{item.category}</span>
 
       <button
         className="gallery-expand"
