@@ -13,12 +13,19 @@
   padding-top: 120px;
 
   background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(8, 124, 255, 0.05),
-      transparent 35%
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(248, 249, 250, 0.98) 30%,
+      rgba(248, 249, 250, 0.95) 60%,
+      rgba(248, 249, 250, 0.98) 100%
     ),
-    var(--gallery-bg);
+    url('../assets/kenworthtruckfull.png');
+  
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 
   color: var(--gallery-text);
 }

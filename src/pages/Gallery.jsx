@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import logo from '../assets/AA-FleetWashbg.png';
 import redTruck1 from '../assets/RedTruck1.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
@@ -9,14 +8,15 @@ import minoTruck1 from '../assets/MinoTruck1.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import truck1 from '../assets/Truck1.png';
 import truck2 from '../assets/Truck2.png';
-import cornerTruck from '../assets/CornorTruck.png';
-import rightCornerTruck from '../assets/RightCornorTruck.png';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
-import digger from '../assets/Diggerr.png';
-import craneWash from '../assets/CraneWash.png';
-import towerCrane from '../assets/ToweerCrane.png';
-import truckWashImage from '../assets/TruckWashimage.png';
+import truckWashImage from '../assets/TruckWash.png';
+import heavyMachine from '../assets/HeavyMachine.png';
+import engineBayClean from '../assets/EngineBayClean.jpeg';
+import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
+import craneWashing from '../assets/CraneWashing.jpeg';
+import kenworthSide from '../assets/kenworthsideprofile.png';
+import kenworthFull from '../assets/kenworthtruckfull.png';
 
 import './Gallery.css';
 
@@ -33,6 +33,30 @@ function Gallery() {
   ];
 
   const galleryItems = [
+    {
+      image: truckWashImage,
+      title: 'Premium Truck Detailing',
+      subtitle: 'Complete Exterior Service',
+      category: 'Trucks',
+    },
+    {
+      image: engineBayClean,
+      title: 'Engine Bay Clean',
+      subtitle: 'Deep Detail',
+      category: 'Detailing',
+    },
+    {
+      image: heavyMachine,
+      title: 'Heavy Machinery',
+      subtitle: 'Construction Equipment',
+      category: 'Trucks',
+    },
+    {
+      image: craneWashing,
+      title: 'Crane Washing',
+      subtitle: 'High-Reach Cleaning',
+      category: 'Trucks',
+    },
     {
       image: redTruck1,
       title: 'Mercedes Actros',
@@ -58,6 +82,12 @@ function Gallery() {
       category: 'Trucks',
     },
     {
+      image: kenworthSide,
+      title: 'Wax & Protection',
+      subtitle: 'Premium Detail',
+      category: 'Detailing',
+    },
+    {
       image: whiteTruck2,
       title: 'Heavy Duty',
       subtitle: 'Professional Clean',
@@ -76,6 +106,12 @@ function Gallery() {
       category: 'Fleet',
     },
     {
+      image: kenworthFull,
+      title: 'Fleet Program',
+      subtitle: 'Complete Service',
+      category: 'Fleet',
+    },
+    {
       image: whiteTruck3,
       title: 'Prime Mover',
       subtitle: 'Premium Detail',
@@ -85,6 +121,12 @@ function Gallery() {
       image: truck2,
       title: 'Truck Detailing',
       subtitle: 'Deep Clean',
+      category: 'Detailing',
+    },
+    {
+      image: engineBayClean2,
+      title: 'Engine Bay Detail',
+      subtitle: 'Professional Clean',
       category: 'Detailing',
     },
     {
@@ -98,42 +140,6 @@ function Gallery() {
       title: 'After',
       subtitle: 'Wheel Detail',
       category: 'Before & After',
-    },
-    {
-      image: cornerTruck,
-      title: 'Construction Equipment',
-      subtitle: 'Heavy Machinery',
-      category: 'Trucks',
-    },
-    {
-      image: rightCornerTruck,
-      title: 'Fleet Operator',
-      subtitle: 'Multi-Vehicle Service',
-      category: 'Fleet',
-    },
-    {
-      image: digger,
-      title: 'Heavy Machinery',
-      subtitle: 'Construction Equipment',
-      category: 'Trucks',
-    },
-    {
-      image: craneWash,
-      title: 'Crane Washing',
-      subtitle: 'Professional Crane Detail',
-      category: 'Trucks',
-    },
-    {
-      image: towerCrane,
-      title: 'Tower Crane Service',
-      subtitle: 'High-Reach Cleaning',
-      category: 'Trucks',
-    },
-    {
-      image: truckWashImage,
-      title: 'Professional Truck Wash',
-      subtitle: 'On-Site Service',
-      category: 'Detailing',
     },
   ];
 

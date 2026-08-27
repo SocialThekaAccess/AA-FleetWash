@@ -45,9 +45,8 @@ function Home() {
   };
 
   const gallery = [
-    { src: minoTruck2, alt: 'Prime mover, freshly washed' },
-    { src: redTruck2, alt: 'Cab detail close-up' },
-    { src: whiteTruck1, alt: 'Trailer side panel' }
+    { src: truckWashImage, alt: 'Truck wash in progress' },
+    { src: redTruck2, alt: 'Clean truck after wash' }
   ];
 
   const services = [

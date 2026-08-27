@@ -82,7 +82,18 @@
 
 .page-content {
   padding: 100px 40px;
-  background: #f8fafc;
+  background: 
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.97) 0%,
+      rgba(248, 250, 252, 0.95) 50%,
+      rgba(255, 255, 255, 0.97) 100%
+    ),
+    url('../assets/kenworthtruckfull.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 .page-cta {
