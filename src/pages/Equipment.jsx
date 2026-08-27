@@ -1,9 +1,9 @@
 import truckWash from '../assets/TruckWash.png';
 import kenworthFull from '../assets/kenworthtruckfull.png';
 import craneWashing from '../assets/CraneWashing.jpeg';
-import heavyMachine from '../assets/HeavyMachine.png';
 import minoTruck from '../assets/MinoTruck2.png';
-import kenworthFront from '../assets/kenworthfront.png';
+import heavyMachine from '../assets/trucktopviewMachine.png';
+import redTruck from '../assets/RedTruck1.png';
 import logo from '../assets/AA-FleetWashbg.png';
 import './SharedPages.css';
 
@@ -12,9 +12,9 @@ function Equipment() {
     { name: 'Trucks', image: truckWash, description: 'Semi-trucks, delivery trucks, box trucks' },
     { name: 'Trailers', image: kenworthFull, description: 'All trailer types and containers' },
     { name: 'Cranes', image: craneWashing, description: 'Tower cranes and mobile cranes' },
-    { name: 'Bulldozers', image: heavyMachine, description: 'All bulldozer models and sizes' },
+    { name: 'Dump Trucks', image: redTruck, description: 'Tipper trucks and dump trucks' },
     { name: 'Excavators', image: minoTruck, description: 'Mini to large excavators' },
-    { name: 'Heavy Machinery', image: kenworthFront, description: 'Construction and industrial equipment' }
+    { name: 'Heavy Machinery', image: heavyMachine, description: 'Construction and industrial equipment' }
   ];
 
   return (

@@ -33,11 +33,14 @@ function Footer() {
             </div>
 
             <div className="footer-column">
-              <h4>COMPANY</h4>
+              <h4>QUICK LINKS</h4>
               <ul>
-                <li><Link to="/equipment">Equipment</Link></li>
-                <li><Link to="/about">About Us</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/equipment">Fleet Solutions</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
 
