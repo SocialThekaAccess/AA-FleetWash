@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import logo from '../assets/AA-FleetWash.png';
 import truckWashImage from '../assets/TruckWash.png';
-import interiorTruckWash from '../assets/interiortruckwash.png';
+import whiteTruck1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import kenworthTruckFull from '../assets/kenworthtruckfull.png';
@@ -62,7 +62,7 @@ function Home() {
     {
       code: '02',
       tag: 'ID',
-      image: interiorTruckWash,
+      image: whiteTruck1,
       title: 'Interior Truck Wash',
       description: 'Vacuum, steam, dash, vents, headliner, glass and seats. Smoke and odour treatment available.'
     },

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SERVICES PAGE - PREMIUM 3D DESIGN (FIXED: 4:5 IMAGE RATIO, NO CROP)
+   SERVICES PAGE - PREMIUM 3D DESIGN (FIXED: NO CROP + BALANCED CARD HEIGHT)
    ========================================================================== */
 .services-page-jsa {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -30,13 +30,13 @@ html {
   margin: 0 auto;
 }
 
-/* Service Block - 3D Card Layout
-   Image column is intentionally narrower than the content column because
-   the source images are 4:5 (portrait). Giving it a full 1fr on desktop
-   made the box far too wide for a portrait image and forced cover-crop. */
+/* Service Block - 3D Card Layout.
+   Image column is "auto" width — the image sizes itself (see below), the
+   content column takes the rest. This works for ANY source image ratio
+   without ever forcing a crop. */
 .service-block {
   display: grid;
-  grid-template-columns: minmax(320px, 460px) 1fr;
+  grid-template-columns: auto 1fr;
   gap: 72px;
   align-items: center;
   margin-bottom: 110px;
@@ -48,7 +48,7 @@ html {
 
 /* Image on right, content on left - swap order + mirror the column widths */
 .service-block.image-right {
-  grid-template-columns: 1fr minmax(320px, 460px);
+  grid-template-columns: 1fr auto;
 }
 
 .service-block.image-right .service-block-image {
@@ -59,19 +59,23 @@ html {
   order: 1;
 }
 
-/* Service Image card. aspect-ratio here is only a PLACEHOLDER shown for a
-   split second before each image finishes loading. Services.jsx reads the
-   real natural width/height of every image on load and overwrites this
-   value inline with that exact ratio — so portrait, landscape, whatever
-   the designer sends, the box always matches the image 1:1 and
-   object-fit: cover never has anything to crop. */
+/* Service Image card.
+   HEIGHT is fixed on desktop so every card reads as a consistent, balanced
+   size regardless of what ratio the source photo actually is. WIDTH is
+   "auto" and derived from that fixed height combined with the image's real
+   aspect-ratio (set inline by Services.jsx once the image loads) — so a
+   landscape photo naturally renders wider and a portrait photo naturally
+   renders narrower, but neither one is ever cropped or stretched.
+   max-width keeps an extreme landscape image from swallowing the layout. */
 .service-block-image {
   position: relative;
   border-radius: 24px;
   overflow: hidden;
   background: #f8f9fa;
-  aspect-ratio: 4 / 5;
-  width: 100%;
+  aspect-ratio: 4 / 5; /* placeholder shown for a split second before load */
+  height: 560px;
+  width: auto;
+  max-width: min(100%, 520px);
   justify-self: center;
   box-shadow:
     0 20px 60px rgba(0, 0, 0, 0.12),
@@ -449,7 +453,11 @@ html {
     margin-bottom: 80px;
   }
 
+  /* Below desktop, drop the fixed-height trick — full width, natural
+     height, so nothing is ever squeezed or cropped on smaller screens. */
   .service-block-image {
+    height: auto;
+    width: 100%;
     max-width: 420px;
     aspect-ratio: 4 / 5;
   }

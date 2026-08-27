@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import truckWashImage from '../assets/TruckWash.png';
-import interiorTruckWash from '../assets/interiortruckwash.png';
+import truckWhite1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
@@ -13,7 +13,9 @@ import './Services.css';
 // Reads the image's REAL natural size once it loads and applies that exact
 // ratio to its parent .service-block-image box. This means every image —
 // whatever ratio the designer sends, portrait or landscape — always shows
-// in full with zero cropping, no manual guessing needed per-image.
+// in full with zero cropping, no manual guessing needed per-image. The
+// container's fixed height (desktop) + this aspect-ratio together decide
+// its rendered width, keeping every card a consistent, balanced size.
 function applyNaturalAspectRatio(imgEl) {
   const container = imgEl.closest('.service-block-image');
   if (container && imgEl.naturalWidth && imgEl.naturalHeight) {
@@ -76,7 +78,7 @@ function Services() {
         'Odour treatment'
       ],
       time: '90 to 120 min',
-      image: interiorTruckWash,
+      image: truckWhite1,
       liveStatus: 'Truck + trailer'
     },
     {
