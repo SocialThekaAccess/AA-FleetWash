@@ -15,7 +15,6 @@ html {
 .service-block {
   scroll-margin-top: 100px;
 }
-}
 
 .services-list-jsa {
   padding: 140px 40px 80px;
@@ -37,14 +36,9 @@ html {
   position: relative;
 }
 
-.service-block.image-left {
-  /* Image on left, content on right */
-}
+/* Image on left, content on right - default order */
 
-.service-block.image-right {
-  /* Image on right, content on left - swap order */
-}
-
+/* Image on right, content on left - swap order */
 .service-block.image-right .service-block-image {
   order: 2;
 }
