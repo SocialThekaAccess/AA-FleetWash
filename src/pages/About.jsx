@@ -2,8 +2,7 @@ import truck1 from '../assets/Truck1.png';
 import truck2 from '../assets/Truck2.png';
 import redTruck from '../assets/RedTruck1.png';
 import kenworthimg from '../assets/kenworthsideprofile.png';
-import logo from '../assets/AA-FleetWashbg.png';
-import craneWash from '../assets/CraneWash.png';
+import heavyMachinary from '../assets/HeavyMachine.png';
 import './SharedPages.css';
 
 function About() {
@@ -15,10 +14,6 @@ function About() {
           <img src={kenworthimg} alt="AA Fleet Wash Trucks" />
           <div className="about-hero__overlay" />
         </div>
-        
-        <a href="/" className="about-hero__logo">
-          <img src={logo} alt="AA Fleet Wash" />
-        </a>
 
         <div className="section-container">
           <div className="about-hero-content">
@@ -122,8 +117,7 @@ function About() {
         <div className="section-container">
           <div className="machinery-grid">
             <div className="machinery-image">
-              <img src={craneWash} alt="Crane Washing Service" />
-              <div className="machinery-badge">HEAVY MACHINERY</div>
+              <img src={heavyMachinary} alt="Heavy Machinery Washing Service" />
             </div>
             <div className="machinery-content">
               <span className="section-badge">● BEYOND TRUCKS</span>

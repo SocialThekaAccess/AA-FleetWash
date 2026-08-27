@@ -26,9 +26,10 @@
 }
 
 .minimal-logo img {
-  height: 50px;
-  width: auto;
+  width: 85px;
+  height: auto;
   transition: transform 0.3s ease;
+  filter: brightness(1.1) contrast(1.1);
 }
 
 .minimal-logo:hover img {
@@ -481,7 +482,9 @@
   }
   
   .minimal-logo img {
-    height: 40px;
+    width: 70px;
+    height: auto;
+    filter: brightness(1.15) contrast(1.15);
   }
   
   .header-phone {

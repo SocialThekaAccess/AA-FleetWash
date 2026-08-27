@@ -1,19 +1,29 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import redTruck from '../assets/RedTruck1.png';
-import redTruck2 from '../assets/RedTruck2.png';
-import whiteTruck1 from '../assets/TruckWhite1.png';
-import whiteTruck2 from '../assets/TruckWhite2.png';
-import whiteTruck3 from '../assets/truckwhite3.png';
-import minoTruck1 from '../assets/MinoTruck1.png';
-import minoTruck2 from '../assets/MinoTruck2.png';
-import truck1 from '../assets/Truck1.png';
-import digger from '../assets/Diggerr.png';
-import craneWash from '../assets/CraneWash.png';
+import { useEffect, useState } from 'react';
+import truckWashImage from '../assets/TruckWash.png';
+import interiorTruckWash from '../assets/interiortruckwash.png';
+import engineBayClean1 from '../assets/EngineBayClean.jpeg';
+import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
+import kenworthSideProfile from '../assets/kenworthsideprofile.png';
+import kenworthTruckFull from '../assets/kenworthtruckfull.png';
+import heavyMachinary from '../assets/HeavyMachine.png';
+import craneWashing from '../assets/CraneWashing.jpeg';
 import './Services.css';
+
+// Reads the image's REAL natural size once it loads and applies that exact
+// ratio to its parent .service-block-image box. This means every image —
+// whatever ratio the designer sends, portrait or landscape — always shows
+// in full with zero cropping, no manual guessing needed per-image.
+function applyNaturalAspectRatio(imgEl) {
+  const container = imgEl.closest('.service-block-image');
+  if (container && imgEl.naturalWidth && imgEl.naturalHeight) {
+    container.style.aspectRatio = `${imgEl.naturalWidth} / ${imgEl.naturalHeight}`;
+  }
+}
 
 function Services() {
   const location = useLocation();
+  const [engineBaySlide, setEngineBaySlide] = useState(0);
 
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -28,6 +38,15 @@ function Services() {
       }, 100);
     }
   }, [location]);
+
+  // Auto-slide for engine bay images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setEngineBaySlide(prev => (prev === 0 ? 1 : 0));
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
   const services = [
     {
       id: 'prime-mover',
@@ -42,14 +61,14 @@ function Services() {
         'Wheel & rim detail'
       ],
       time: '60 to 90 min',
-      image: redTruck,
+      image: truckWashImage,
       liveStatus: 'Prime mover detail'
     },
     {
       id: 'engine-bay',
       number: '02',
       eyebrow: 'CAB FIT FOR A LONG-HAUL.',
-      title: 'Interior Detail',
+      title: 'Interior Truck Wash',
       description: 'Vacuum, steam, dash, vents, headliner, glass and seats. Smoke and odour treatment available. You\'ll forget how dirty it was.',
       features: [
         'Steam sanitise',
@@ -57,7 +76,7 @@ function Services() {
         'Odour treatment'
       ],
       time: '90 to 120 min',
-      image: whiteTruck1,
+      image: interiorTruckWash,
       liveStatus: 'Truck + trailer'
     },
     {
@@ -72,7 +91,7 @@ function Services() {
         'Electrical-safe'
       ],
       time: '60 min',
-      image: minoTruck1,
+      images: [engineBayClean1, engineBayClean2],
       liveStatus: 'Heavy combo wash'
     },
     {
@@ -87,7 +106,7 @@ function Services() {
         'UV resistant'
       ],
       time: '2 hr',
-      image: redTruck2,
+      image: kenworthSideProfile,
       liveStatus: 'Mobile service'
     },
     {
@@ -102,7 +121,7 @@ function Services() {
         'Priority slots'
       ],
       time: 'Custom',
-      image: whiteTruck2,
+      image: kenworthTruckFull,
       liveStatus: 'Fleet program'
     },
     {
@@ -117,7 +136,7 @@ function Services() {
         'Undercarriage clean'
       ],
       time: '90 to 180 min',
-      image: digger,
+      image: heavyMachinary,
       liveStatus: 'Excavator clean'
     },
     {
@@ -132,7 +151,7 @@ function Services() {
         'Job-ready finish'
       ],
       time: '2 to 3 hr',
-      image: craneWash,
+      image: craneWashing,
       liveStatus: 'Crane detail'
     }
   ];
@@ -146,11 +165,57 @@ function Services() {
             <div key={index} id={service.id} className={`service-block ${index % 2 === 0 ? 'image-left' : 'image-right'}`}>
               {/* Image Side */}
               <div className="service-block-image">
-                <div className="service-number-badge">{service.number}</div>
-                {service.badge && (
-                  <div className="service-most-booked-badge">{service.badge}</div>
+                {service.images ? (
+                  // Slider for multiple images
+                  <>
+                    <div className="image-slider">
+                      {service.images.map((img, imgIndex) => (
+                        <img
+                          key={imgIndex}
+                          src={img}
+                          alt={`${service.title} ${imgIndex + 1}`}
+                          className={engineBaySlide === imgIndex ? 'active' : ''}
+                          onLoad={(e) => {
+                            // Only the first image sets the box shape, so the
+                            // cross-fading slides don't fight over the ratio.
+                            if (imgIndex === 0) applyNaturalAspectRatio(e.target);
+                          }}
+                        />
+                      ))}
+                    </div>
+                    <div className="slider-dots">
+                      {service.images.map((_, imgIndex) => (
+                        <button
+                          key={imgIndex}
+                          className={`slider-dot ${engineBaySlide === imgIndex ? 'active' : ''}`}
+                          onClick={() => setEngineBaySlide(imgIndex)}
+                          aria-label={`View image ${imgIndex + 1}`}
+                        />
+                      ))}
+                    </div>
+                    <button
+                      className="slider-arrow slider-arrow-left"
+                      onClick={() => setEngineBaySlide(prev => prev === 0 ? service.images.length - 1 : prev - 1)}
+                      aria-label="Previous image"
+                    >
+                      ‹
+                    </button>
+                    <button
+                      className="slider-arrow slider-arrow-right"
+                      onClick={() => setEngineBaySlide(prev => (prev + 1) % service.images.length)}
+                      aria-label="Next image"
+                    >
+                      ›
+                    </button>
+                  </>
+                ) : (
+                  // Single image — its real ratio drives the box shape
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    onLoad={(e) => applyNaturalAspectRatio(e.target)}
+                  />
                 )}
-                <img src={service.image} alt={service.title} />
               </div>
 
               {/* Content Side */}
@@ -158,7 +223,7 @@ function Services() {
                 <div className="service-eyebrow">{service.eyebrow}</div>
                 <h2>{service.title}</h2>
                 <p className="service-description">{service.description}</p>
-                
+
                 <ul className="service-check-list">
                   {service.features.map((feature, idx) => (
                     <li key={idx}>

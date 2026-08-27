@@ -1,18 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import logo from '../assets/AA-FleetWash.png';
-import redTruck from '../assets/RedTruck.png';
+import truckWashImage from '../assets/TruckWash.png';
+import interiorTruckWash from '../assets/interiortruckwash.png';
+import engineBayClean1 from '../assets/EngineBayClean.jpeg';
+import kenworthSideProfile from '../assets/kenworthsideprofile.png';
+import kenworthTruckFull from '../assets/kenworthtruckfull.png';
 import redTruck2 from '../assets/RedTruck2.png';
-import whiteTruck1 from '../assets/TruckWhite1.png';
-import whiteTruck2 from '../assets/TruckWhite2.png';
-import whiteTruck3 from '../assets/truckwhite3.png';
-import minoTruck1 from '../assets/MinoTruck1.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
-import truck1 from '../assets/Truck1.png';
-import truck2 from '../assets/Truck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
-import truckTopView from '../assets/trucktopviewMachine.png';
 import video1 from '../assets/AA REEL 1.mp4';
 import video2 from '../assets/AA REEL 2 V2.mp4';
 import video3 from '../assets/AA REEL 3 V2.mp4';
@@ -56,39 +53,39 @@ function Home() {
   const services = [
     {
       code: '01',
-      tag: 'PM',
-      image: minoTruck2,
-      title: 'Prime mover detail',
-      description: 'Full exterior and interior detail, cab to chassis, with professional-grade gear.',
+      tag: 'TW',
+      image: truckWashImage,
+      title: 'Exterior Truck Wash',
+      description: 'Two-bucket safe-wash on cabs, trailers, tankers, tippers and reefers. We dissolve road salt, brake dust and grime.',
       badge: 'MOST BOOKED'
     },
     {
       code: '02',
-      tag: 'EB',
-      image: whiteTruck1,
-      title: 'Engine bay clean',
-      description: 'Degreased and rinsed with solutions safe on hoses, wiring and alloy.'
+      tag: 'ID',
+      image: interiorTruckWash,
+      title: 'Interior Truck Wash',
+      description: 'Vacuum, steam, dash, vents, headliner, glass and seats. Smoke and odour treatment available.'
     },
     {
       code: '03',
-      tag: 'DT',
-      image: minoTruck1,
-      title: 'Dog & tipper clean',
-      description: 'Trailer and tipper washes, inside the bin and out, top to bottom.'
+      tag: 'EB',
+      image: engineBayClean1,
+      title: 'Engine Bay Clean',
+      description: 'Degrease, dress and protect, without damaging electricals. Ideal pre-service or pre-sale.'
     },
     {
       code: '04',
-      tag: 'FW',
-      image: redTruck,
-      title: 'Full truck wash',
-      description: 'Cab, chassis and undercarriage, the whole rig, done properly.'
+      tag: 'WP',
+      image: kenworthSideProfile,
+      title: 'Wax & Paint Protection',
+      description: 'Carnauba and ceramic-blend sealants that bead water for months. Protects paint from UV and road salt.'
     },
     {
       code: '05',
       tag: 'FP',
-      image: truck1,
-      title: 'Fleet washing program',
-      description: 'Recurring runs built around your dispatch, priced per vehicle.'
+      image: kenworthTruckFull,
+      title: 'Fleet Washing Program',
+      description: 'Recurring programs for operators running 5+ rigs. Weekly, fortnightly or monthly with dedicated slots.'
     }
   ];
 

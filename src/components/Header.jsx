@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/AA-FleetWash.png';
+import logoBg from '../assets/AA-FleetWashbg.png';
 import './Header.css';
 
 function Header() {
@@ -26,7 +27,7 @@ function Header() {
       <header className="minimal-header">
         {location.pathname !== '/' && (
           <Link to="/" className="minimal-logo">
-            <img src={logo} alt="AA Fleet Wash" />
+            <img src={logoBg} alt="AA Fleet Wash" />
           </Link>
         )}
         
