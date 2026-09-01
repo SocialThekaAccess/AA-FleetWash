@@ -14,13 +14,10 @@ import crane2 from '../assets/Crane2Img.png';
 import './Services.css';
 
 // Reads the image's REAL natural size once it loads and applies that exact
-// ratio to its parent .service-block-image box. This is only used for
-// SINGLE-image services (no slider) — there's only one image, so there's
-// no conflict. For slider services (multiple images), the container keeps
-// a fixed aspect-ratio (set in CSS) and each <img> uses
-// object-fit: contain, so no matter which slide is active, or how
-// different its ratio is from the others, the photo is always shown in
-// full and never cropped.
+// ratio to its parent .service-block-image box. Used for BOTH single
+// images and the currently active slide of a slider, so the box shape
+// always matches whatever photo is showing — no cropping, and no empty
+// letterbox background either.
 function applyNaturalAspectRatio(imgEl) {
   const container = imgEl.closest('.service-block-image');
   if (container && imgEl.naturalWidth && imgEl.naturalHeight) {
@@ -32,8 +29,8 @@ function applyNaturalAspectRatio(imgEl) {
 // opacity), so by the time a slide is shown its naturalWidth/naturalHeight
 // are already available. This reads the CURRENTLY ACTIVE slide image's
 // real size and resizes the shared container to match it exactly — so
-// there's no white letterbox gap (mismatched ratio) and no cropping
-// (forced-cover) for whichever image is showing.
+// there's no empty grey/white letterbox space and no cropping for
+// whichever image is showing.
 function syncSliderAspectRatio(serviceId, activeIndex) {
   const container = document.querySelector(`#${serviceId} .service-block-image`);
   if (!container) return;
@@ -64,6 +61,16 @@ function Services() {
       clearInterval(heavyMachineryInterval);
     };
   }, []);
+
+  // Whenever the active slide changes, resize the shared box to match that
+  // exact image's real ratio (fixes the empty grey/white side gaps).
+  useEffect(() => {
+    syncSliderAspectRatio('engine-bay', engineBaySlide);
+  }, [engineBaySlide]);
+
+  useEffect(() => {
+    syncSliderAspectRatio('heavy-machinery', heavyMachinerySlide);
+  }, [heavyMachinerySlide]);
 
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -198,25 +205,30 @@ function Services() {
               {/* Image Side */}
               <div className="service-block-image">
                 {service.images ? (
-                  // Slider for multiple images.
-                  // NOTE: no onLoad / applyNaturalAspectRatio call here on
-                  // purpose. The container keeps the fixed aspect-ratio
-                  // from CSS, and every <img> uses object-fit: contain, so
-                  // whichever slide is active is always shown in full —
-                  // this is the fix for the crane images getting cut off.
+                  // Slider for multiple images. Every image gets an onLoad
+                  // handler; when the currently ACTIVE image finishes
+                  // loading (or a slide switches to an already-loaded
+                  // image), we resize the shared box to match its real
+                  // ratio exactly — this removes the empty grey/white
+                  // side gaps and never crops.
                   <>
                     <div className="image-slider">
-                      {service.images.map((img, imgIndex) => (
-                        <img
-                          key={imgIndex}
-                          src={img}
-                          alt={`${service.title} ${imgIndex + 1}`}
-                          className={
-                            (service.id === 'engine-bay' ? engineBaySlide : 
-                             heavyMachinerySlide) === imgIndex ? 'active' : ''
-                          }
-                        />
-                      ))}
+                      {service.images.map((img, imgIndex) => {
+                        const activeIndex = service.id === 'engine-bay' ? engineBaySlide : heavyMachinerySlide;
+                        return (
+                          <img
+                            key={imgIndex}
+                            src={img}
+                            alt={`${service.title} ${imgIndex + 1}`}
+                            className={activeIndex === imgIndex ? 'active' : ''}
+                            onLoad={() => {
+                              if (activeIndex === imgIndex) {
+                                syncSliderAspectRatio(service.id, imgIndex);
+                              }
+                            }}
+                          />
+                        );
+                      })}
                     </div>
                     <div className="slider-dots">
                       {service.images.map((_, imgIndex) => (

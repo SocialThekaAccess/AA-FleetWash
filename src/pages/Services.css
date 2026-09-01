@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SERVICES PAGE - PREMIUM 3D DESIGN (FIXED: NO CROP + BALANCED CARD HEIGHT)
+   SERVICES PAGE - PREMIUM 3D DESIGN (FIXED: NO CROP + NO EMPTY LETTERBOX)
    ========================================================================== */
 .services-page-jsa {
   font-family: 'Inter', system-ui, -apple-system, sans-serif;
@@ -33,7 +33,7 @@ html {
 /* Service Block - Premium Card Layout with better spacing */
 .service-block {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 480px 1fr;
   gap: 100px;
   align-items: start;
   margin-bottom: 140px;
@@ -43,7 +43,7 @@ html {
 
 /* Image on right, content on left - swap order */
 .service-block.image-right {
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 480px;
 }
 
 .service-block.image-right .service-block-image {
@@ -54,15 +54,22 @@ html {
   order: 1;
 }
 
-/* Service Image card - Fixed 4:5 ratio with contain for full visibility */
+/* Service Image card.
+   FIX: width and height are NOT hard-fixed anymore. The box sizes itself
+   from width + aspect-ratio, and Services.jsx sets that aspect-ratio to
+   each photo's REAL natural ratio (inline style, so it always wins over
+   this placeholder). Because the box's shape then always matches the
+   photo's shape exactly, there is no leftover empty space for the grey
+   background to show through — no more white/grey side borders. */
 .service-block-image {
   position: relative;
   border-radius: 20px;
   overflow: hidden;
   background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
-  aspect-ratio: 4 / 5;
-  height: 600px;
-  width: 480px;
+  aspect-ratio: 4 / 5; /* placeholder shown briefly before JS sets the real ratio */
+  height: auto;
+  width: 100%;
+  max-width: 480px;
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.15),
     0 12px 32px rgba(8, 124, 255, 0.1),
@@ -100,7 +107,9 @@ html {
   opacity: 1;
 }
 
-/* Images - Contain to show full image without cropping */
+/* Images fill the box completely now, since the box always matches their
+   real ratio — object-fit: contain is kept only as a safety net for the
+   brief instant before the real ratio is applied. */
 .service-block-image img {
   width: 100%;
   height: 100%;
@@ -121,7 +130,6 @@ html {
   height: 100%;
 }
 
-/* Slider images - Contain to show full image without cropping */
 .image-slider img {
   position: absolute;
   top: 0;
@@ -455,8 +463,6 @@ html {
     margin-bottom: 80px;
   }
 
-  /* Below desktop, drop the fixed-height trick — full width, natural
-     height, so nothing is ever squeezed or cropped on smaller screens. */
   .service-block-image {
     height: auto;
     width: 100%;
@@ -511,7 +517,7 @@ html {
     align-items: center;
     justify-content: center;
   }
-  
+
   .service-block-image img,
   .image-slider img {
     object-fit: contain;
