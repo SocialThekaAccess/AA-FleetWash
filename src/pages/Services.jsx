@@ -1,16 +1,16 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import truckWashImage from '../assets/TruckWash.png';
+import blueTruck from '../assets/BlueTruck.png';
 import truckWhite1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
-import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
-import kenworthTruckFull from '../assets/kenworthtruckfull.png';
+import washableTruck from '../assets/WashablwTruck.png';
+import heavyMachine from '../assets/HeavyMachine.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
 import heavyMachine2 from '../assets/HeavyMachine2.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
-import heavyMachine4 from '../assets/HeavyMachine4.png';
-import crane2 from '../assets/Crane2Img.png';
+import crane1 from '../assets/Crane1Img.png';
 import './Services.css';
 
 // Reads the image's REAL natural size once it loads and applies that exact
@@ -43,13 +43,13 @@ function syncSliderAspectRatio(serviceId, activeIndex) {
 
 function Services() {
   const location = useLocation();
-  const [engineBaySlide, setEngineBaySlide] = useState(0);
+  const [exteriorTruckSlide, setExteriorTruckSlide] = useState(0);
   const [heavyMachinerySlide, setHeavyMachinerySlide] = useState(0);
 
   // Auto-play sliders
   useEffect(() => {
-    const engineBayInterval = setInterval(() => {
-      setEngineBaySlide(prev => (prev + 1) % 2); // 2 images
+    const exteriorTruckInterval = setInterval(() => {
+      setExteriorTruckSlide(prev => (prev + 1) % 2); // 2 images
     }, 4000);
 
     const heavyMachineryInterval = setInterval(() => {
@@ -57,7 +57,7 @@ function Services() {
     }, 5000);
 
     return () => {
-      clearInterval(engineBayInterval);
+      clearInterval(exteriorTruckInterval);
       clearInterval(heavyMachineryInterval);
     };
   }, []);
@@ -65,8 +65,8 @@ function Services() {
   // Whenever the active slide changes, resize the shared box to match that
   // exact image's real ratio (fixes the empty grey/white side gaps).
   useEffect(() => {
-    syncSliderAspectRatio('engine-bay', engineBaySlide);
-  }, [engineBaySlide]);
+    syncSliderAspectRatio('prime-mover', exteriorTruckSlide);
+  }, [exteriorTruckSlide]);
 
   useEffect(() => {
     syncSliderAspectRatio('heavy-machinery', heavyMachinerySlide);
@@ -100,7 +100,7 @@ function Services() {
         'Wheel & rim detail'
       ],
       time: '60 to 90 min',
-      image: truckWashImage,
+      images: [truckWashImage, blueTruck],
       liveStatus: 'Prime mover detail'
     },
     {
@@ -130,7 +130,7 @@ function Services() {
         'Electrical-safe'
       ],
       time: '60 min',
-      images: [engineBayClean1, engineBayClean2],
+      image: engineBayClean1,
       liveStatus: 'Heavy combo wash'
     },
     {
@@ -160,7 +160,7 @@ function Services() {
         'Priority slots'
       ],
       time: 'Custom',
-      image: kenworthTruckFull,
+      image: washableTruck,
       liveStatus: 'Fleet program'
     },
     {
@@ -175,23 +175,23 @@ function Services() {
         'Undercarriage clean'
       ],
       time: '90 to 180 min',
-      images: [heavyMachine4, heavyMachine3, heavyMachine1, heavyMachine2],
+      images: [heavyMachine, heavyMachine3, heavyMachine1, heavyMachine2],
       liveStatus: 'Excavator clean'
     },
     {
-      id: 'crane-wash',
+      id: 'farm-machinery',
       number: '07',
-      eyebrow: 'REACH NEW HEIGHTS.',
-      title: 'Crane Washing Service',
-      description: 'Specialized cleaning for mobile cranes, tower cranes and boom lifts. We clean the cab, boom, chassis and undercarriage, safely removing grease, dust and construction grime.',
+      eyebrow: 'BUILT FOR THE LAND.',
+      title: 'Farm Machinery Wash',
+      description: 'Specialized cleaning for tractors, harvesters, combine harvesters and agricultural equipment. Hot-water pressure washing that removes mud, crop residue and field dust without damaging sensitive components.',
       features: [
-        'Boom & chassis detail',
-        'Safe on hydraulics',
-        'Job-ready finish'
+        'High-pressure hot water',
+        'Safe on hydraulics & electronics',
+        'Undercarriage & attachment clean'
       ],
-      time: '2 to 3 hr',
-      image: crane2,
-      liveStatus: 'Crane detail'
+      time: '90 to 180 min',
+      image: crane1,
+      liveStatus: 'Tractor detail'
     }
   ];
 
@@ -214,7 +214,7 @@ function Services() {
                   <>
                     <div className="image-slider">
                       {service.images.map((img, imgIndex) => {
-                        const activeIndex = service.id === 'engine-bay' ? engineBaySlide : heavyMachinerySlide;
+                        const activeIndex = service.id === 'prime-mover' ? exteriorTruckSlide : heavyMachinerySlide;
                         return (
                           <img
                             key={imgIndex}
@@ -235,11 +235,11 @@ function Services() {
                         <button
                           key={imgIndex}
                           className={`slider-dot ${
-                            (service.id === 'engine-bay' ? engineBaySlide : 
+                            (service.id === 'prime-mover' ? exteriorTruckSlide : 
                              heavyMachinerySlide) === imgIndex ? 'active' : ''
                           }`}
                           onClick={() => 
-                            service.id === 'engine-bay' ? setEngineBaySlide(imgIndex) : 
+                            service.id === 'prime-mover' ? setExteriorTruckSlide(imgIndex) : 
                             setHeavyMachinerySlide(imgIndex)
                           }
                           aria-label={`View image ${imgIndex + 1}`}
@@ -249,9 +249,9 @@ function Services() {
                     <button
                       className="slider-arrow slider-arrow-left"
                       onClick={() => {
-                        const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
+                        const setter = service.id === 'prime-mover' ? setExteriorTruckSlide : 
                                       setHeavyMachinerySlide;
-                        const current = service.id === 'engine-bay' ? engineBaySlide : 
+                        const current = service.id === 'prime-mover' ? exteriorTruckSlide : 
                                        heavyMachinerySlide;
                         setter(current === 0 ? service.images.length - 1 : current - 1);
                       }}
@@ -262,9 +262,9 @@ function Services() {
                     <button
                       className="slider-arrow slider-arrow-right"
                       onClick={() => {
-                        const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
+                        const setter = service.id === 'prime-mover' ? setExteriorTruckSlide : 
                                       setHeavyMachinerySlide;
-                        const current = service.id === 'engine-bay' ? engineBaySlide : 
+                        const current = service.id === 'prime-mover' ? exteriorTruckSlide : 
                                        heavyMachinerySlide;
                         setter((current + 1) % service.images.length);
                       }}

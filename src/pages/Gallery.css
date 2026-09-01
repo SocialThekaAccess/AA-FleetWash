@@ -416,6 +416,8 @@ background instead of a hard crop.
   bottom: 25px;
 
   right: 80px;
+  
+  display: none; /* Hide the title and subtitle overlay */
 }
 
 

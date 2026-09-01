@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { useState, useRef } from 'react';
 import logo from '../assets/AA-FleetWash.png';
+import blueTruck from '../assets/BlueTruck.png';
 import truckWashImage from '../assets/TruckWash.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
-import kenworthTruckFull from '../assets/kenworthtruckfull.png';
+import washableTruck from '../assets/WashablwTruck.png';
 import redTruck2 from '../assets/RedTruck2.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -46,7 +47,7 @@ function Home() {
 
   const gallery = [
     { src: truckWashImage, alt: 'Truck wash in progress' },
-    { src: redTruck2, alt: 'Clean truck after wash' }
+    { src: blueTruck, alt: 'Clean truck after wash' }
   ];
 
   const services = [
@@ -82,7 +83,7 @@ function Home() {
     {
       code: '05',
       tag: 'FP',
-      image: kenworthTruckFull,
+      image: washableTruck,
       title: 'Fleet Washing Program',
       description: 'Recurring programs for operators running 5+ rigs. Weekly, fortnightly or monthly with dedicated slots.'
     }
@@ -130,7 +131,7 @@ function Home() {
   const whyChoose = [
     {
       num: '01',
-      title: '8+ years on the tools',
+      title: '5+ years in the business',
       description: 'Mani has been around trucks long enough to know what aluminium needs, what paint can take, and what a hot wash will do to a wrap.'
     },
     {
@@ -201,8 +202,8 @@ function Home() {
                   <span>fleets serviced</span>
                 </div>
                 <div className="hero-strip__item">
-                  <strong>8+ yrs</strong>
-                  <span>on the tools</span>
+                  <strong>5+ years</strong>
+                  <span>in the business</span>
                 </div>
                 <div className="hero-strip__item">
                   <strong>5.0</strong>
@@ -285,7 +286,7 @@ function Home() {
               THE DIFFERENCE
             </div>
             <h2>
-              Same wheel.<span>Twenty minutes apart.</span>
+              Same wheel.<span>Five minutes apart.</span>
             </h2>
             <p>
               Road film, brake dust and diesel grime build up fast on a working rig.

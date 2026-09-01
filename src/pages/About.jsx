@@ -2,7 +2,7 @@ import truck1 from '../assets/Truck1.png';
 import truck2 from '../assets/Truck2.png';
 import redTruck from '../assets/RedTruck1.png';
 import kenworthimg from '../assets/kenworthsideprofile.png';
-import heavyMachinary from '../assets/HeavyMachine.png';
+import heavyMachinary from '../assets/HeavyMachine4.png';
 import './SharedPages.css';
 
 function About() {
@@ -88,8 +88,8 @@ function About() {
               <h2>500+ rigs washed. Zero complaints about missed spots.</h2>
               <div className="stats-list">
                 <div className="stat-item">
-                  <div className="stat-number">8+ years</div>
-                  <div className="stat-label">On the tools, same crew</div>
+                  <div className="stat-number">5+ years</div>
+                  <div className="stat-label">In the business</div>
                 </div>
                 <div className="stat-item">
                   <div className="stat-number">5.0 ★★★★★</div>

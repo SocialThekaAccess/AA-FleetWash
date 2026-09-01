@@ -1,21 +1,18 @@
 import { useState } from 'react';
-import redTruck1 from '../assets/RedTruck1.png';
-import redTruck2 from '../assets/RedTruck2.png';
+import blueTruck from '../assets/BlueTruck.png';
+import truckWashImage from '../assets/TruckWash.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
-import whiteTruck2 from '../assets/TruckWhite2.png';
-import whiteTruck3 from '../assets/truckwhite3.png';
-import minoTruck1 from '../assets/MinoTruck1.png';
-import minoTruck2 from '../assets/MinoTruck2.png';
-import truck1 from '../assets/Truck1.png';
+import washableTruck from '../assets/WashablwTruck.png';
+import engineBayClean from '../assets/EngineBayClean.jpeg';
+import kenworthSide from '../assets/kenworthsideprofile.png';
+import heavyMachine from '../assets/HeavyMachine.png';
+import heavyMachine1 from '../assets/HeavyMachine1.png';
+import heavyMachine2 from '../assets/HeavyMachine2.png';
+import heavyMachine3 from '../assets/HeavyMachine3.png';
+import heavyMachine4 from '../assets/HeavyMachine4.png';
+import crane1 from '../assets/Crane1Img.png';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
-import truckWashImage from '../assets/TruckWash.png';
-import heavyMachine from '../assets/HeavyMachine.png';
-import engineBayClean from '../assets/EngineBayClean.jpeg';
-import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
-import craneWashing from '../assets/CraneWashing.jpeg';
-import kenworthSide from '../assets/kenworthsideprofile.png';
-import kenworthFull from '../assets/kenworthtruckfull.png';
 
 import './Gallery.css';
 
@@ -40,88 +37,52 @@ function Gallery() {
       category: 'Trucks',
     },
     {
-      image: engineBayClean,
-      title: 'Engine Bay Detailing',
-      subtitle: 'Deep Clean Service',
-      category: 'Detailing',
-    },
-    {
-      image: heavyMachine,
-      title: 'Heavy Equipment Wash',
-      subtitle: 'Construction Machinery',
-      category: 'Trucks',
-    },
-    {
-      image: craneWashing,
-      title: 'Crane Cleaning',
-      subtitle: 'Specialized High-Reach',
-      category: 'Trucks',
-    },
-    {
-      image: redTruck1,
-      title: 'Red Actros Truck',
-      subtitle: 'Full Detailing',
-      category: 'Trucks',
-    },
-    {
       image: whiteTruck1,
       title: 'White Fleet Truck',
       subtitle: 'Interior & Exterior',
       category: 'Fleet',
     },
     {
-      image: minoTruck1,
-      title: 'Hino Truck Wash',
-      subtitle: 'Fleet Service',
-      category: 'Fleet',
-    },
-    {
-      image: redTruck2,
-      title: 'Commercial Fleet',
-      subtitle: 'Regular Maintenance',
-      category: 'Trucks',
-    },
-    {
-      image: kenworthSide,
-      title: 'Kenworth Detailing',
-      subtitle: 'Wax & Protection',
+      image: engineBayClean,
+      title: 'Engine Bay Detailing',
+      subtitle: 'Deep Clean Service',
       category: 'Detailing',
     },
     {
-      image: whiteTruck2,
-      title: 'Heavy Duty Truck',
-      subtitle: 'Professional Clean',
-      category: 'Trucks',
+      image: kenworthSide,
+      title: 'Kenworth Wax & Protection',
+      subtitle: 'Premium Finish',
+      category: 'Detailing',
     },
     {
-      image: truck1,
-      title: 'Fleet Program',
+      image: washableTruck,
+      title: 'Fleet Washing Program',
       subtitle: 'Regular Service',
       category: 'Fleet',
     },
     {
-      image: minoTruck2,
-      title: 'White Truck Wash',
-      subtitle: 'Complete Service',
-      category: 'Fleet',
+      image: heavyMachine4,
+      title: 'Heavy Equipment Wash',
+      subtitle: 'Construction Machinery',
+      category: 'Trucks',
     },
     {
-      image: kenworthFull,
-      title: 'Kenworth Full Detail',
-      subtitle: 'Premium Package',
-      category: 'Fleet',
+      image: heavyMachine3,
+      title: 'Excavator Cleaning',
+      subtitle: 'Heavy Machinery',
+      category: 'Trucks',
     },
     {
-      image: whiteTruck3,
-      title: 'Prime Mover Detail',
-      subtitle: 'Premium Service',
-      category: 'Detailing',
+      image: crane1,
+      title: 'Farm Machinery Wash',
+      subtitle: 'Agricultural Equipment',
+      category: 'Trucks',
     },
     {
-      image: engineBayClean2,
-      title: 'Engine Bay Clean',
-      subtitle: 'Professional Detail',
-      category: 'Detailing',
+      image: blueTruck,
+      title: 'Blue Truck Detail',
+      subtitle: 'Exterior Service',
+      category: 'Trucks',
     },
     {
       image: wheelBefore,

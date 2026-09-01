@@ -28,7 +28,7 @@ function Footer() {
                 <li><Link to="/services#full-truck">Wax & Paint Protection</Link></li>
                 <li><Link to="/services#fleet-services">Fleet Washing Program</Link></li>
                 <li><Link to="/services#heavy-machinery">Heavy Machinery Wash</Link></li>
-                <li><Link to="/services#crane-wash">Crane Washing Service</Link></li>
+                <li><Link to="/services#farm-machinery">Farm Machinery Wash</Link></li>
               </ul>
             </div>
 
