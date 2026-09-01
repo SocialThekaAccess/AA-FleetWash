@@ -168,7 +168,7 @@ function Services() {
       number: '06',
       eyebrow: 'DIRT THAT DOESN\'T BUDGET.',
       title: 'Heavy Machinery Wash',
-      description: 'Purpose-built for loaders, excavators, graders, bulldozers and diggers. Hot-water pressure washing that strips mud, concrete and builder\'s dust without damaging hydraulics or decals.',
+      description: 'Specialized cleaning for construction equipment and heavy machinery. Hot-water pressure washing that removes mud, concrete and site grime without damaging hydraulics, decals or painted surfaces.',
       features: [
         'High-pressure hot water',
         'Hydraulic-safe',
