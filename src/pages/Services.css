@@ -30,23 +30,18 @@ html {
   margin: 0 auto;
 }
 
-/* Service Block - 3D Card Layout.
-   Image column is "auto" width — the image sizes itself (see below), the
-   content column takes the rest. This works for ANY source image ratio
-   without ever forcing a crop. */
+/* Service Block - Premium Card Layout with better spacing */
 .service-block {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 72px;
-  align-items: center;
-  margin-bottom: 110px;
+  gap: 100px;
+  align-items: start;
+  margin-bottom: 140px;
   position: relative;
-  perspective: 1500px;
+  padding: 60px 0;
 }
 
-/* Image on left, content on right - default order */
-
-/* Image on right, content on left - swap order + mirror the column widths */
+/* Image on right, content on left - swap order */
 .service-block.image-right {
   grid-template-columns: 1fr auto;
 }
@@ -59,30 +54,22 @@ html {
   order: 1;
 }
 
-/* Service Image card.
-   HEIGHT is fixed on desktop so every card reads as a consistent, balanced
-   size regardless of what ratio the source photo actually is. WIDTH is
-   "auto" and derived from that fixed height combined with the image's real
-   aspect-ratio (set inline by Services.jsx once the image loads) — so a
-   landscape photo naturally renders wider and a portrait photo naturally
-   renders narrower, but neither one is ever cropped or stretched.
-   max-width keeps an extreme landscape image from swallowing the layout. */
+/* Service Image card - Fixed 4:5 ratio, no white space */
 .service-block-image {
   position: relative;
-  border-radius: 24px;
+  border-radius: 20px;
   overflow: hidden;
-  background: #f8f9fa;
-  aspect-ratio: 4 / 5; /* placeholder shown for a split second before load */
-  height: 560px;
-  width: auto;
-  max-width: min(100%, 520px);
-  justify-self: center;
+  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+  aspect-ratio: 4 / 5;
+  height: 600px;
+  width: 480px;
   box-shadow:
-    0 20px 60px rgba(0, 0, 0, 0.12),
-    0 8px 24px rgba(8, 124, 255, 0.08);
+    0 30px 80px rgba(0, 0, 0, 0.15),
+    0 12px 32px rgba(8, 124, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
   transform: translateZ(0);
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(8, 124, 255, 0.1);
 }
 
 .service-block-image::before {
@@ -92,9 +79,9 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(8, 124, 255, 0.03) 0%, transparent 50%);
+  background: linear-gradient(135deg, rgba(8, 124, 255, 0.05) 0%, transparent 60%);
   opacity: 0;
-  transition: opacity 0.5s ease;
+  transition: opacity 0.6s ease;
   z-index: 2;
   pointer-events: none;
 }
@@ -110,26 +97,28 @@ html {
   opacity: 1;
 }
 
+/* Images - Cover to fill container completely, no white space */
 .service-block-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   display: block;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-block:hover .service-block-image img {
-  transform: scale(1.05);
+  transform: scale(1.08);
 }
 
-/* Image Slider - Enhanced 3D */
+/* Image Slider - Enhanced Premium Look */
 .image-slider {
   position: relative;
   width: 100%;
   height: 100%;
 }
 
+/* Slider images - Cover to fill completely */
 .image-slider img {
   position: absolute;
   top: 0;
@@ -139,8 +128,8 @@ html {
   object-fit: cover;
   object-position: center;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
-  transform: scale(1);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+  transform: scale(1.05);
 }
 
 .image-slider img.active {
@@ -149,7 +138,7 @@ html {
   transform: scale(1);
 }
 
-/* Slider Arrows - Glassmorphism */
+/* Slider Arrows - Modern Premium Style */
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -165,7 +154,7 @@ html {
   font-weight: 300;
   cursor: pointer;
   z-index: 10;
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -194,7 +183,7 @@ html {
   right: 20px;
 }
 
-/* Slider Dots - Modern Indicator */
+/* Slider Dots - Hidden for clean look */
 .slider-dots {
   position: absolute;
   bottom: 20px;
@@ -269,44 +258,54 @@ html {
 }
 
 .service-block-content h2 {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 48px;
-  font-weight: 800;
-  margin: 0 0 24px;
-  color: #14181c;
-  letter-spacing: -1.5px;
-  line-height: 1.1;
+  font-family: 'Bricolage Grotesque', -apple-system, sans-serif;
+  font-size: 58px;
+  font-weight: 900;
+  margin: 0 0 28px;
+  color: #0a0f14;
+  letter-spacing: -2px;
+  line-height: 1.05;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
 }
 
 .service-description {
-  font-size: 17px;
-  line-height: 1.8;
-  color: #565f68;
-  margin: 0 0 32px;
-  max-width: 46ch;
+  font-size: 18px;
+  line-height: 1.85;
+  color: #4a5568;
+  margin: 0 0 40px;
+  max-width: 52ch;
+  font-weight: 450;
 }
 
 .service-check-list {
   list-style: none;
   padding: 0;
-  margin: 0 0 36px;
+  margin: 0 0 44px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 16px;
 }
 
 .service-check-list li {
   display: flex;
   align-items: center;
-  gap: 14px;
-  font-size: 15px;
+  gap: 16px;
+  font-size: 16px;
   font-weight: 600;
-  color: #14181c;
-  padding: 10px 16px;
-  background: rgba(8, 124, 255, 0.05);
-  border-radius: 10px;
-  border: 1px solid rgba(8, 124, 255, 0.15);
-  transition: all 0.3s ease;
+  color: #1a202c;
+  padding: 16px 20px;
+  background: linear-gradient(135deg, rgba(8, 124, 255, 0.04) 0%, rgba(8, 124, 255, 0.02) 100%);
+  border-radius: 12px;
+  border: 1.5px solid rgba(8, 124, 255, 0.12);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 8px rgba(8, 124, 255, 0.04);
+}
+
+.service-check-list li:hover {
+  background: linear-gradient(135deg, rgba(8, 124, 255, 0.08) 0%, rgba(8, 124, 255, 0.04) 100%);
+  border-color: rgba(8, 124, 255, 0.25);
+  transform: translateX(6px);
+  box-shadow: 0 4px 16px rgba(8, 124, 255, 0.12);
 }
 
 .service-check-list li:hover {

@@ -6,16 +6,22 @@ import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import kenworthTruckFull from '../assets/kenworthtruckfull.png';
-import heavyMachinary from '../assets/HeavyMachine.png';
-import craneWashing from '../assets/CraneWashing.jpeg';
+import heavyMachine1 from '../assets/HeavyMachine1.png';
+import heavyMachine2 from '../assets/HeavyMachine2.png';
+import heavyMachine3 from '../assets/HeavyMachine3.png';
+import heavyMachine4 from '../assets/HeavyMachine4.png';
+import crane1 from '../assets/Crane1Img.png';
+import crane2 from '../assets/Crane2Img.png';
 import './Services.css';
 
 // Reads the image's REAL natural size once it loads and applies that exact
-// ratio to its parent .service-block-image box. This means every image —
-// whatever ratio the designer sends, portrait or landscape — always shows
-// in full with zero cropping, no manual guessing needed per-image. The
-// container's fixed height (desktop) + this aspect-ratio together decide
-// its rendered width, keeping every card a consistent, balanced size.
+// ratio to its parent .service-block-image box. This is only used for
+// SINGLE-image services (no slider) — there's only one image, so there's
+// no conflict. For slider services (multiple images), the container keeps
+// a fixed aspect-ratio (set in CSS) and each <img> uses
+// object-fit: contain, so no matter which slide is active, or how
+// different its ratio is from the others, the photo is always shown in
+// full and never cropped.
 function applyNaturalAspectRatio(imgEl) {
   const container = imgEl.closest('.service-block-image');
   if (container && imgEl.naturalWidth && imgEl.naturalHeight) {
@@ -23,9 +29,48 @@ function applyNaturalAspectRatio(imgEl) {
   }
 }
 
+// For sliders: every image already sits in the DOM (just hidden via
+// opacity), so by the time a slide is shown its naturalWidth/naturalHeight
+// are already available. This reads the CURRENTLY ACTIVE slide image's
+// real size and resizes the shared container to match it exactly — so
+// there's no white letterbox gap (mismatched ratio) and no cropping
+// (forced-cover) for whichever image is showing.
+function syncSliderAspectRatio(serviceId, activeIndex) {
+  const container = document.querySelector(`#${serviceId} .service-block-image`);
+  if (!container) return;
+  const imgs = container.querySelectorAll('.image-slider img');
+  const activeImg = imgs[activeIndex];
+  if (activeImg && activeImg.naturalWidth && activeImg.naturalHeight) {
+    container.style.aspectRatio = `${activeImg.naturalWidth} / ${activeImg.naturalHeight}`;
+  }
+}
+
 function Services() {
   const location = useLocation();
   const [engineBaySlide, setEngineBaySlide] = useState(0);
+  const [craneSlide, setCraneSlide] = useState(0);
+  const [heavyMachinerySlide, setHeavyMachinerySlide] = useState(0);
+
+  // Auto-play sliders
+  useEffect(() => {
+    const engineBayInterval = setInterval(() => {
+      setEngineBaySlide(prev => (prev + 1) % 2); // 2 images
+    }, 4000);
+
+    const craneInterval = setInterval(() => {
+      setCraneSlide(prev => (prev + 1) % 2); // 2 images
+    }, 4500);
+
+    const heavyMachineryInterval = setInterval(() => {
+      setHeavyMachinerySlide(prev => (prev + 1) % 4); // 4 images
+    }, 5000);
+
+    return () => {
+      clearInterval(engineBayInterval);
+      clearInterval(craneInterval);
+      clearInterval(heavyMachineryInterval);
+    };
+  }, []);
 
   useEffect(() => {
     // Check if there's a hash in the URL
@@ -49,6 +94,16 @@ function Services() {
 
     return () => clearInterval(interval);
   }, []);
+
+  // Whenever the active slide changes, resize the container to match that
+  // exact image's real ratio (fixes white gaps + prevents cropping).
+  useEffect(() => {
+    syncSliderAspectRatio('engine-bay', engineBaySlide);
+  }, [engineBaySlide]);
+
+  useEffect(() => {
+    syncSliderAspectRatio('crane-wash', craneSlide);
+  }, [craneSlide]);
   const services = [
     {
       id: 'prime-mover',
@@ -138,7 +193,7 @@ function Services() {
         'Undercarriage clean'
       ],
       time: '90 to 180 min',
-      image: heavyMachinary,
+      images: [heavyMachine4, heavyMachine3, heavyMachine1, heavyMachine2],
       liveStatus: 'Excavator clean'
     },
     {
@@ -153,7 +208,7 @@ function Services() {
         'Job-ready finish'
       ],
       time: '2 to 3 hr',
-      image: craneWashing,
+      images: [crane1, crane2],
       liveStatus: 'Crane detail'
     }
   ];
@@ -168,7 +223,12 @@ function Services() {
               {/* Image Side */}
               <div className="service-block-image">
                 {service.images ? (
-                  // Slider for multiple images
+                  // Slider for multiple images.
+                  // NOTE: no onLoad / applyNaturalAspectRatio call here on
+                  // purpose. The container keeps the fixed aspect-ratio
+                  // from CSS, and every <img> uses object-fit: contain, so
+                  // whichever slide is active is always shown in full —
+                  // this is the fix for the crane images getting cut off.
                   <>
                     <div className="image-slider">
                       {service.images.map((img, imgIndex) => (
@@ -176,12 +236,11 @@ function Services() {
                           key={imgIndex}
                           src={img}
                           alt={`${service.title} ${imgIndex + 1}`}
-                          className={engineBaySlide === imgIndex ? 'active' : ''}
-                          onLoad={(e) => {
-                            // Only the first image sets the box shape, so the
-                            // cross-fading slides don't fight over the ratio.
-                            if (imgIndex === 0) applyNaturalAspectRatio(e.target);
-                          }}
+                          className={
+                            (service.id === 'engine-bay' ? engineBaySlide : 
+                             service.id === 'crane-wash' ? craneSlide : 
+                             heavyMachinerySlide) === imgIndex ? 'active' : ''
+                          }
                         />
                       ))}
                     </div>
@@ -189,29 +248,54 @@ function Services() {
                       {service.images.map((_, imgIndex) => (
                         <button
                           key={imgIndex}
-                          className={`slider-dot ${engineBaySlide === imgIndex ? 'active' : ''}`}
-                          onClick={() => setEngineBaySlide(imgIndex)}
+                          className={`slider-dot ${
+                            (service.id === 'engine-bay' ? engineBaySlide : 
+                             service.id === 'crane-wash' ? craneSlide : 
+                             heavyMachinerySlide) === imgIndex ? 'active' : ''
+                          }`}
+                          onClick={() => 
+                            service.id === 'engine-bay' ? setEngineBaySlide(imgIndex) : 
+                            service.id === 'crane-wash' ? setCraneSlide(imgIndex) :
+                            setHeavyMachinerySlide(imgIndex)
+                          }
                           aria-label={`View image ${imgIndex + 1}`}
                         />
                       ))}
                     </div>
                     <button
                       className="slider-arrow slider-arrow-left"
-                      onClick={() => setEngineBaySlide(prev => prev === 0 ? service.images.length - 1 : prev - 1)}
+                      onClick={() => {
+                        const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
+                                      service.id === 'crane-wash' ? setCraneSlide : 
+                                      setHeavyMachinerySlide;
+                        const current = service.id === 'engine-bay' ? engineBaySlide : 
+                                       service.id === 'crane-wash' ? craneSlide : 
+                                       heavyMachinerySlide;
+                        setter(current === 0 ? service.images.length - 1 : current - 1);
+                      }}
                       aria-label="Previous image"
                     >
                       ‹
                     </button>
                     <button
                       className="slider-arrow slider-arrow-right"
-                      onClick={() => setEngineBaySlide(prev => (prev + 1) % service.images.length)}
+                      onClick={() => {
+                        const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
+                                      service.id === 'crane-wash' ? setCraneSlide : 
+                                      setHeavyMachinerySlide;
+                        const current = service.id === 'engine-bay' ? engineBaySlide : 
+                                       service.id === 'crane-wash' ? craneSlide : 
+                                       heavyMachinerySlide;
+                        setter((current + 1) % service.images.length);
+                      }}
                       aria-label="Next image"
                     >
                       ›
                     </button>
                   </>
                 ) : (
-                  // Single image — its real ratio drives the box shape
+                  // Single image — dynamic aspect-ratio is safe here since
+                  // there's only ever one photo for this box.
                   <img
                     src={service.image}
                     alt={service.title}
