@@ -10,7 +10,6 @@ import heavyMachine1 from '../assets/HeavyMachine1.png';
 import heavyMachine2 from '../assets/HeavyMachine2.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
 import heavyMachine4 from '../assets/HeavyMachine4.png';
-import crane1 from '../assets/Crane1Img.png';
 import crane2 from '../assets/Crane2Img.png';
 import './Services.css';
 
@@ -48,7 +47,6 @@ function syncSliderAspectRatio(serviceId, activeIndex) {
 function Services() {
   const location = useLocation();
   const [engineBaySlide, setEngineBaySlide] = useState(0);
-  const [craneSlide, setCraneSlide] = useState(0);
   const [heavyMachinerySlide, setHeavyMachinerySlide] = useState(0);
 
   // Auto-play sliders
@@ -57,17 +55,12 @@ function Services() {
       setEngineBaySlide(prev => (prev + 1) % 2); // 2 images
     }, 4000);
 
-    const craneInterval = setInterval(() => {
-      setCraneSlide(prev => (prev + 1) % 2); // 2 images
-    }, 4500);
-
     const heavyMachineryInterval = setInterval(() => {
       setHeavyMachinerySlide(prev => (prev + 1) % 4); // 4 images
     }, 5000);
 
     return () => {
       clearInterval(engineBayInterval);
-      clearInterval(craneInterval);
       clearInterval(heavyMachineryInterval);
     };
   }, []);
@@ -86,24 +79,6 @@ function Services() {
     }
   }, [location]);
 
-  // Auto-slide for engine bay images
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setEngineBaySlide(prev => (prev === 0 ? 1 : 0));
-    }, 3000); // Change image every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  // Whenever the active slide changes, resize the container to match that
-  // exact image's real ratio (fixes white gaps + prevents cropping).
-  useEffect(() => {
-    syncSliderAspectRatio('engine-bay', engineBaySlide);
-  }, [engineBaySlide]);
-
-  useEffect(() => {
-    syncSliderAspectRatio('crane-wash', craneSlide);
-  }, [craneSlide]);
   const services = [
     {
       id: 'prime-mover',
@@ -208,7 +183,7 @@ function Services() {
         'Job-ready finish'
       ],
       time: '2 to 3 hr',
-      images: [crane1, crane2],
+      image: crane2,
       liveStatus: 'Crane detail'
     }
   ];
@@ -238,7 +213,6 @@ function Services() {
                           alt={`${service.title} ${imgIndex + 1}`}
                           className={
                             (service.id === 'engine-bay' ? engineBaySlide : 
-                             service.id === 'crane-wash' ? craneSlide : 
                              heavyMachinerySlide) === imgIndex ? 'active' : ''
                           }
                         />
@@ -250,12 +224,10 @@ function Services() {
                           key={imgIndex}
                           className={`slider-dot ${
                             (service.id === 'engine-bay' ? engineBaySlide : 
-                             service.id === 'crane-wash' ? craneSlide : 
                              heavyMachinerySlide) === imgIndex ? 'active' : ''
                           }`}
                           onClick={() => 
                             service.id === 'engine-bay' ? setEngineBaySlide(imgIndex) : 
-                            service.id === 'crane-wash' ? setCraneSlide(imgIndex) :
                             setHeavyMachinerySlide(imgIndex)
                           }
                           aria-label={`View image ${imgIndex + 1}`}
@@ -266,10 +238,8 @@ function Services() {
                       className="slider-arrow slider-arrow-left"
                       onClick={() => {
                         const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
-                                      service.id === 'crane-wash' ? setCraneSlide : 
                                       setHeavyMachinerySlide;
                         const current = service.id === 'engine-bay' ? engineBaySlide : 
-                                       service.id === 'crane-wash' ? craneSlide : 
                                        heavyMachinerySlide;
                         setter(current === 0 ? service.images.length - 1 : current - 1);
                       }}
@@ -281,10 +251,8 @@ function Services() {
                       className="slider-arrow slider-arrow-right"
                       onClick={() => {
                         const setter = service.id === 'engine-bay' ? setEngineBaySlide : 
-                                      service.id === 'crane-wash' ? setCraneSlide : 
                                       setHeavyMachinerySlide;
                         const current = service.id === 'engine-bay' ? engineBaySlide : 
-                                       service.id === 'crane-wash' ? craneSlide : 
                                        heavyMachinerySlide;
                         setter((current + 1) % service.images.length);
                       }}

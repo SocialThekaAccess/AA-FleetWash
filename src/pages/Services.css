@@ -54,7 +54,7 @@ html {
   order: 1;
 }
 
-/* Service Image card - Fixed 4:5 ratio, no white space */
+/* Service Image card - Fixed 4:5 ratio with contain for full visibility */
 .service-block-image {
   position: relative;
   border-radius: 20px;
@@ -70,6 +70,9 @@ html {
   transform: translateZ(0);
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   border: 1px solid rgba(8, 124, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .service-block-image::before {
@@ -97,18 +100,18 @@ html {
   opacity: 1;
 }
 
-/* Images - Cover to fill container completely, no white space */
+/* Images - Contain to show full image without cropping */
 .service-block-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   display: block;
   transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .service-block:hover .service-block-image img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
 /* Image Slider - Enhanced Premium Look */
@@ -118,18 +121,18 @@ html {
   height: 100%;
 }
 
-/* Slider images - Cover to fill completely */
+/* Slider images - Contain to show full image without cropping */
 .image-slider img {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   opacity: 0;
   transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .image-slider img.active {
@@ -504,6 +507,14 @@ html {
     max-width: 100%;
     aspect-ratio: 4 / 5;
     border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .service-block-image img,
+  .image-slider img {
+    object-fit: contain;
   }
 
   .slider-arrow {
