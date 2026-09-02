@@ -82,6 +82,12 @@ function Gallery() {
       category: 'Trucks',
     },
     {
+      image: whiteTruck1,
+      title: 'White Truck Fleet',
+      subtitle: 'Fleet Detailing',
+      category: 'Fleet',
+    },
+    {
       image: interiorTruck,
       title: 'Interior Detailing',
       subtitle: 'Deep Clean Interior',
