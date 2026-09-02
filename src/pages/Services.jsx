@@ -175,7 +175,7 @@ function Services() {
         'Undercarriage clean'
       ],
       time: '90 to 180 min',
-      images: [heavyMachine, heavyMachine3, heavyMachine1, heavyMachine2],
+      images: [heavyMachine3, heavyMachine1, heavyMachine2],
       liveStatus: 'Excavator clean'
     },
     {

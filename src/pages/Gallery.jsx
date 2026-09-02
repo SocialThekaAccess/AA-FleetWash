@@ -40,12 +40,6 @@ function Gallery() {
       category: 'Trucks',
     },
     {
-      image: whiteTruck1,
-      title: 'White Fleet Truck',
-      subtitle: 'Interior & Exterior',
-      category: 'Fleet',
-    },
-    {
       image: engineBayClean,
       title: 'Engine Bay Detailing',
       subtitle: 'Deep Clean Service',
