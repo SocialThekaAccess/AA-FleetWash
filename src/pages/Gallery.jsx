@@ -11,6 +11,9 @@ import heavyMachine2 from '../assets/HeavyMachine2.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
 import heavyMachine4 from '../assets/HeavyMachine4.png';
 import crane1 from '../assets/Crane1Img.png';
+import interiorTruck from '../assets/InteriortruckWashhh.png';
+import minoTruck2 from '../assets/MinoTruck2.png';
+import redTruck2 from '../assets/RedTruck2.png';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
 
@@ -82,6 +85,24 @@ function Gallery() {
       image: blueTruck,
       title: 'Blue Truck Detail',
       subtitle: 'Exterior Service',
+      category: 'Trucks',
+    },
+    {
+      image: interiorTruck,
+      title: 'Interior Detailing',
+      subtitle: 'Deep Clean Interior',
+      category: 'Detailing',
+    },
+    {
+      image: minoTruck2,
+      title: 'Fleet Service',
+      subtitle: 'Regular Maintenance',
+      category: 'Fleet',
+    },
+    {
+      image: redTruck2,
+      title: 'Red Truck Detail',
+      subtitle: 'Complete Service',
       category: 'Trucks',
     },
     {

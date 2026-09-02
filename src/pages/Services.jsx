@@ -2,14 +2,14 @@ import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import truckWashImage from '../assets/TruckWash.png';
 import blueTruck from '../assets/BlueTruck.png';
-import truckWhite1 from '../assets/TruckWhite1.png';
+import interiorTruck from '../assets/InteriortruckWashhh.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
-import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import washableTruck from '../assets/WashablwTruck.png';
 import heavyMachine from '../assets/HeavyMachine.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
 import heavyMachine2 from '../assets/HeavyMachine2.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
+import heavyMachine4 from '../assets/HeavyMachine4.png';
 import crane1 from '../assets/Crane1Img.png';
 import './Services.css';
 
@@ -107,7 +107,7 @@ function Services() {
       id: 'engine-bay',
       number: '02',
       eyebrow: 'CAB FIT FOR A LONG-HAUL.',
-      title: 'Interior Truck Wash',
+      title: 'Interior Detailing',
       description: 'Vacuum, steam, dash, vents, headliner, glass and seats. Smoke and odour treatment available. You\'ll forget how dirty it was.',
       features: [
         'Steam sanitise',
@@ -115,7 +115,7 @@ function Services() {
         'Odour treatment'
       ],
       time: '90 to 120 min',
-      image: truckWhite1,
+      image: interiorTruck,
       liveStatus: 'Truck + trailer'
     },
     {
@@ -145,7 +145,7 @@ function Services() {
         'UV resistant'
       ],
       time: '2 hr',
-      image: kenworthSideProfile,
+      image: heavyMachine4,
       liveStatus: 'Mobile service'
     },
     {

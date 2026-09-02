@@ -7,7 +7,7 @@ import whiteTruck1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import washableTruck from '../assets/WashablwTruck.png';
-import redTruck2 from '../assets/RedTruck2.png';
+import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
@@ -166,7 +166,7 @@ function Home() {
     <main className="aa-home">
       {/* ============ HERO ============ */}
       <section className="hero">
-        <div className="hero-bg" style={{ backgroundImage: `url(${redTruck2})` }} />
+        <div className="hero-bg" style={{ backgroundImage: `url(${homePageBG})` }} />
         <div className="hero-scrim" />
         <div className="hero-grid" />
 
@@ -177,8 +177,7 @@ function Home() {
               JOB SHEET NO. AA-2026
             </div> */}  
             <h1>
-              Grime off
-              Fleet <span>rolling</span>
+              Clean Fleet, <span>Happy Fleet</span>
             </h1>
             <p>
               Mobile onsite truck washing for operators who can't afford downtime.
