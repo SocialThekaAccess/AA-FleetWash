@@ -88,6 +88,18 @@ function Gallery() {
       category: 'Detailing',
     },
     {
+      image: heavyMachine1,
+      title: 'Construction Equipment',
+      subtitle: 'Heavy Machinery Clean',
+      category: 'Trucks',
+    },
+    {
+      image: heavyMachine2,
+      title: 'Loader Detailing',
+      subtitle: 'Site Equipment Wash',
+      category: 'Trucks',
+    },
+    {
       image: minoTruck2,
       title: 'Fleet Service',
       subtitle: 'Regular Maintenance',
