@@ -4,13 +4,14 @@ import logo from '../assets/AA-FleetWash.png';
 import blueTruck from '../assets/BlueTruck.png';
 import truckWashImage from '../assets/TruckWash.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
+import whiteTruck2 from '../assets/TruckWhite2.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
 import crane1Img from '../assets/Crane1Img.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
-import kenworthFront from '../assets/kenworthfront.png';
+import truckWaxPaintProtection from '../assets/truck_wax_paint_protection.png';
 import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -80,7 +81,7 @@ function Home() {
     {
       code: '04',
       tag: 'WP',
-      image: kenworthSideProfile,
+      image: truckWaxPaintProtection,
       title: 'Wax & Paint Protection',
       description: 'Premium paint correction and protection treatment. Mirror-finish detailing that keeps your rig looking sharp for months.'
     },
@@ -114,10 +115,10 @@ function Home() {
     },
     {
       code: '09',
-      tag: 'HT',
-      image: kenworthFront,
-      title: 'Heavy Truck Wash',
-      description: 'Specialized washing service for large commercial trucks. Complete exterior clean including cab, chassis and chrome restoration.'
+      tag: 'TC',
+      image: whiteTruck2,
+      title: 'Truck Care & Maintenance',
+      description: 'Complete truck care service including waxing, polishing and protective coating. Keep your truck looking professional and protected.'
     }
   ];
 
