@@ -9,7 +9,7 @@ import heavyMachine from '../assets/HeavyMachine.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
 import heavyMachine2 from '../assets/HeavyMachine2.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
-import heavyMachine4 from '../assets/HeavyMachine4.png';
+import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import crane1 from '../assets/Crane1Img.png';
 import './Services.css';
 
@@ -145,7 +145,7 @@ function Services() {
         'UV resistant'
       ],
       time: '2 hr',
-      image: heavyMachine4,
+      image: kenworthSideProfile,
       liveStatus: 'Mobile service'
     },
     {

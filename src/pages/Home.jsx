@@ -6,7 +6,7 @@ import truckWashImage from '../assets/TruckWash.png';
 import whiteTruck1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
-import washableTruck from '../assets/WashablwTruck.png';
+import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
 import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -56,7 +56,7 @@ function Home() {
       tag: 'TW',
       image: truckWashImage,
       title: 'Exterior Truck Wash',
-      description: 'Two-bucket safe-wash on cabs, trailers, tankers, tippers and reefers. We dissolve road salt, brake dust and grime.',
+      description: 'Professional exterior detailing bringing back the showroom shine. Deep cleaning every panel, rim and surface.',
       badge: 'MOST BOOKED'
     },
     {
@@ -64,28 +64,28 @@ function Home() {
       tag: 'ID',
       image: whiteTruck1,
       title: 'Interior Truck Wash',
-      description: 'Vacuum, steam, dash, vents, headliner, glass and seats. Smoke and odour treatment available.'
+      description: 'Complete cab interior detailing - leather seats, dashboard, steering wheel and every corner steam cleaned and restored.'
     },
     {
       code: '03',
       tag: 'EB',
       image: engineBayClean1,
       title: 'Engine Bay Clean',
-      description: 'Degrease, dress and protect, without damaging electricals. Ideal pre-service or pre-sale.'
+      description: 'Professional engine bay degreasing and detailing. Every component cleaned, dressed and protected without damaging electricals.'
     },
     {
       code: '04',
       tag: 'WP',
       image: kenworthSideProfile,
       title: 'Wax & Paint Protection',
-      description: 'Carnauba and ceramic-blend sealants that bead water for months. Protects paint from UV and road salt.'
+      description: 'Premium paint correction and protection treatment. Mirror-finish detailing that keeps your rig looking sharp for months.'
     },
     {
       code: '05',
       tag: 'FP',
-      image: washableTruck,
+      image: fleetWashingProgram,
       title: 'Fleet Washing Program',
-      description: 'Recurring programs for operators running 5+ rigs. Weekly, fortnightly or monthly with dedicated slots.'
+      description: 'Complete fleet maintenance program. Keep your entire fleet consistently clean and professional-looking year-round.'
     }
   ];
 
