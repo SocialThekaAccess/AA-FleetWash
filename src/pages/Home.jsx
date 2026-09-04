@@ -209,7 +209,7 @@ function Home() {
               JOB SHEET NO. AA-2026
             </div> */}  
             <h1>
-              Clean Fleet, <span>Happy Fleet</span>
+              Clean Fleet <span>Happy Fleet</span>
             </h1>
             <p>
               Mobile onsite truck washing for operators who can't afford downtime.
