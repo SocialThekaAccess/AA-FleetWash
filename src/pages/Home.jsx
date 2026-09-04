@@ -10,7 +10,7 @@ import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
 import crane1Img from '../assets/Crane1Img.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
-import redTruck1 from '../assets/RedTruck1.png';
+import kenworthFront from '../assets/kenworthfront.png';
 import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -100,24 +100,24 @@ function Home() {
     },
     {
       code: '07',
-      tag: 'FM',
+      tag: 'EX',
       image: crane1Img,
-      title: 'Farm Machinery Wash',
-      description: 'Professional cleaning for tractors, harvesters and agricultural equipment. Field-ready results without damaging sensitive components.'
+      title: 'Excavator & Earthmoving',
+      description: 'Professional cleaning for excavators and earthmoving machinery. Yellow equipment restored to showroom condition with careful detailing.'
     },
     {
       code: '08',
-      tag: 'CE',
+      tag: 'TT',
       image: heavyMachine1,
-      title: 'Construction Equipment',
-      description: 'Complete detailing for construction machinery and earthmoving equipment. Deep clean that removes mud, concrete and heavy debris.'
+      title: 'Tipper & Trailer Wash',
+      description: 'Complete wash for tippers, trailers and bulk carriers. Specialized cleaning removes stubborn materials from bins and bodies.'
     },
     {
       code: '09',
-      tag: 'PR',
-      image: redTruck1,
-      title: 'Prime Mover Detailing',
-      description: 'Premium detailing service for prime movers. Complete wash, polish and protection treatment for show-quality finish.'
+      tag: 'HT',
+      image: kenworthFront,
+      title: 'Heavy Truck Wash',
+      description: 'Specialized washing service for large commercial trucks. Complete exterior clean including cab, chassis and chrome restoration.'
     }
   ];
 
