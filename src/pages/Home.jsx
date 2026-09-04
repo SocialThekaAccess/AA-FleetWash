@@ -7,6 +7,10 @@ import whiteTruck1 from '../assets/TruckWhite1.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import kenworthSideProfile from '../assets/kenworthsideprofile.png';
 import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
+import heavyMachine3 from '../assets/HeavyMachine3.png';
+import crane1Img from '../assets/Crane1Img.png';
+import heavyMachine1 from '../assets/HeavyMachine1.png';
+import redTruck1 from '../assets/RedTruck1.png';
 import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -86,6 +90,34 @@ function Home() {
       image: fleetWashingProgram,
       title: 'Fleet Washing Program',
       description: 'Complete fleet maintenance program. Keep your entire fleet consistently clean and professional-looking year-round.'
+    },
+    {
+      code: '06',
+      tag: 'HM',
+      image: heavyMachine3,
+      title: 'Heavy Machinery Wash',
+      description: 'Specialized cleaning for excavators, loaders and construction equipment. Hot-water pressure washing removes site grime safely.'
+    },
+    {
+      code: '07',
+      tag: 'FM',
+      image: crane1Img,
+      title: 'Farm Machinery Wash',
+      description: 'Professional cleaning for tractors, harvesters and agricultural equipment. Field-ready results without damaging sensitive components.'
+    },
+    {
+      code: '08',
+      tag: 'CE',
+      image: heavyMachine1,
+      title: 'Construction Equipment',
+      description: 'Complete detailing for construction machinery and earthmoving equipment. Deep clean that removes mud, concrete and heavy debris.'
+    },
+    {
+      code: '09',
+      tag: 'PR',
+      image: redTruck1,
+      title: 'Prime Mover Detailing',
+      description: 'Premium detailing service for prime movers. Complete wash, polish and protection treatment for show-quality finish.'
     }
   ];
 
