@@ -317,7 +317,7 @@ function Home() {
               THE DIFFERENCE
             </div>
             <h2>
-              Same wheel.<span>Five minutes apart.</span>
+              Same wheel<span>Five minutes apart</span>
             </h2>
             <p>
               Road film, brake dust and diesel grime build up fast on a working rig.
@@ -360,7 +360,7 @@ function Home() {
                 THE WORK ORDER
               </div>
               <h2>
-                Five services.<span>One standard.</span>
+                Five services<span>One standard</span>
               </h2>
             </div>
             <div className="section-head__aside">
@@ -438,7 +438,7 @@ function Home() {
               WHY OPERATORS STAY
             </div>
             <h2>
-              Owners on the tools.<span>Every single job.</span>
+              Owners on the tools<span>Every single job</span>
             </h2>
             <p>
               That means clear communication, consistent workmanship, and a proper
