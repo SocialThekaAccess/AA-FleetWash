@@ -191,20 +191,6 @@ function Gallery() {
             Professional fleet washing that keeps your trucks looking sharp and running proud. See the difference we make for operators across Melbourne.
           </p>
         </div>
-
-        <div className="gallery-filters">
-          {filters.map((filter) => (
-            <button
-              key={filter}
-              className={`filter-btn ${
-                activeFilter === filter ? 'active' : ''
-              }`}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter}
-            </button>
-          ))}
-        </div>
       </section>
 
 
