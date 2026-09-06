@@ -6,7 +6,7 @@ import truckWashImage from '../assets/TruckWash.png';
 import interiorTruck from '../assets/InteriortruckWashhh.png';
 import whiteTruck2 from '../assets/TruckWhite2.png';
 import redTruck2 from '../assets/RedTruck2.png';
-import engineBayClean1 from '../assets/EngineBayClean.jpeg';
+import engineBayCleaning from '../assets/engine_bay_cleaning.png';
 import waxAndPaintProtectionImage from '../assets/WAXANDPAINTPROTECTIONn.png';
 import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
@@ -74,7 +74,7 @@ function Home() {
     {
       code: '03',
       tag: 'EB',
-      image: engineBayClean1,
+      image: engineBayCleaning,
       title: 'Engine Bay Clean',
       description: 'Professional engine bay degreasing and detailing. Every component cleaned, dressed and protected without damaging electricals.'
     },

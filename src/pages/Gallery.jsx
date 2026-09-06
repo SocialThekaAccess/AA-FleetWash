@@ -445,16 +445,6 @@ function GalleryCard({ item, className = '', onClick, priority = false }) {
           <path d="M3 21l8-8" />
         </svg>
       </button>
-
-      <div className="gallery-info">
-        <h3>{item.title}</h3>
-        <p>{item.subtitle}</p>
-
-        <span className="gallery-view">
-          View Details
-          <span>→</span>
-        </span>
-      </div>
     </article>
   );
 }

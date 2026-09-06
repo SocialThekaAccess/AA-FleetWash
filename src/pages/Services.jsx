@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import truckWashImage from '../assets/TruckWash.png';
 import blueTruck from '../assets/BlueTruck.png';
 import interiorTruck from '../assets/InteriortruckWashhh.png';
-import engineBayClean1 from '../assets/EngineBayClean.jpeg';
+import engineBayCleaning from '../assets/engine_bay_cleaning.png';
 import washableTruck from '../assets/WashablwTruck.png';
 import heavyMachine from '../assets/HeavyMachine.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
@@ -130,7 +130,7 @@ function Services() {
         'Electrical-safe'
       ],
       time: '60 min',
-      image: engineBayClean1,
+      image: engineBayCleaning,
       liveStatus: 'Heavy combo wash'
     },
     {
