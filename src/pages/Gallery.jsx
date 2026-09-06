@@ -60,12 +60,6 @@ function Gallery() {
       category: 'Detailing',
     },
     {
-      image: kenworthSide,
-      title: 'Kenworth Wax & Protection',
-      subtitle: 'Premium Finish',
-      category: 'Detailing',
-    },
-    {
       image: washableTruck,
       title: 'Fleet Washing Program',
       subtitle: 'Regular Service',
