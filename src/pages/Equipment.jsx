@@ -12,7 +12,7 @@ function Equipment() {
     { name: 'Trucks', image: truckWash, description: 'Semi-trucks, delivery trucks, box trucks' },
     { name: 'Trailers', image: kenworthFull, description: 'Prime movers, road trains, and heavy haulage' },
     { name: 'Cranes', image: craneWashing, description: 'Tower cranes and mobile cranes' },
-    { name: 'Dump Trucks', image: redTruck, description: 'Tipper trucks and dump trucks' },
+    { name: 'Prime Movers', image: redTruck, description: 'Heavy-duty prime movers and road tractors' },
     { name: 'Small Trucks', image: minoTruck, description: 'Light commercial and delivery vehicles' },
     { name: 'Heavy Machinery', image: heavyMachine, description: 'Construction and industrial equipment' }
   ];
