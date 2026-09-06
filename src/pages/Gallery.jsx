@@ -103,12 +103,6 @@ function Gallery() {
       category: 'Fleet',
     },
     {
-      image: interiorTruck,
-      title: 'Interior Detailing',
-      subtitle: 'Deep Clean Interior',
-      category: 'Detailing',
-    },
-    {
       image: heavyMachine1,
       title: 'Construction Equipment',
       subtitle: 'Heavy Machinery Clean',
