@@ -237,8 +237,8 @@ function Home() {
                   <span>in the business</span>
                 </div>
                 <div className="hero-strip__item">
-                  <strong>5.0</strong>
-                  <span>from 73+ reviews</span>
+                  <strong>5 ★★★★★</strong>
+                  <span>star service</span>
                 </div>
               </div>
             </div>
