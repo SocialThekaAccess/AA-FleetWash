@@ -3,15 +3,14 @@ import { useState, useRef } from 'react';
 import logo from '../assets/AA-FleetWash.png';
 import blueTruck from '../assets/BlueTruck.png';
 import truckWashImage from '../assets/TruckWash.png';
-import whiteTruck1 from '../assets/TruckWhite1.png';
+import interiorTruck from '../assets/InteriortruckWashhh.png';
 import whiteTruck2 from '../assets/TruckWhite2.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
-import kenworthSideProfile from '../assets/kenworthsideprofile.png';
+import waxAndPaintProtectionImage from '../assets/WAXANDPAINTPROTECTIONn.png';
 import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
 import heavyMachine3 from '../assets/HeavyMachine3.png';
 import crane1Img from '../assets/Crane1Img.png';
 import heavyMachine1 from '../assets/HeavyMachine1.png';
-import truckWaxPaintProtection from '../assets/truck_wax_paint_protection.png';
 import homePageBG from '../assets/HomePageBG.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
@@ -67,8 +66,8 @@ function Home() {
     {
       code: '02',
       tag: 'ID',
-      image: whiteTruck1,
-      title: 'Interior Truck Wash',
+      image: interiorTruck,
+      title: 'Interior Detailing',
       description: 'Complete cab interior detailing - leather seats, dashboard, steering wheel and every corner steam cleaned and restored.'
     },
     {
@@ -81,7 +80,7 @@ function Home() {
     {
       code: '04',
       tag: 'WP',
-      image: truckWaxPaintProtection,
+      image: waxAndPaintProtectionImage,
       title: 'Wax & Paint Protection',
       description: 'Premium paint correction and protection treatment. Mirror-finish detailing that keeps your rig looking sharp for months.'
     },
@@ -210,7 +209,7 @@ function Home() {
               JOB SHEET NO. AA-2026
             </div> */}  
             <h1>
-              Clean Fleet <span>Happy Fleet</span>
+              "Clean, Constant, Professional"
             </h1>
             <p>
               Mobile onsite truck washing for operators who can't afford downtime.

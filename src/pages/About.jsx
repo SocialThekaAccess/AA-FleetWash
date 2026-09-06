@@ -20,7 +20,7 @@ function About() {
             <span className="section-badge">● ABOUT AA FLEET WASH</span>
             <h1>We're not the cheapest <br/> We're the most thorough </h1>
             <p className="hero-subtitle">
-              8+ years washing trucks that earn their keep. Owner-operated, same crew, same standards, whether it's your first wash or your hundredth.
+              5+ years washing trucks that earn their keep. Owner-operated, same crew, same standards, whether it's your first wash or your hundredth.
             </p>
           </div>
         </div>
