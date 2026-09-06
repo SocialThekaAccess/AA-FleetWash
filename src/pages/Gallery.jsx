@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import blueTruck from '../assets/BlueTruck.png';
 import truckWashImage from '../assets/TruckWash.png';
-import whiteTruck1 from '../assets/TruckWhite1.png';
+// import whiteTruck1 from '../assets/TruckWhite1.png';
 import washableTruck from '../assets/WashablwTruck.png';
 import engineBayClean from '../assets/engine_bay_cleaning.png';
 import kenworthSide from '../assets/kenworthsideprofile.png';
@@ -89,12 +89,12 @@ function Gallery() {
       subtitle: 'Exterior Service',
       category: 'Trucks',
     },
-    {
-      image: whiteTruck1,
-      title: 'White Truck Fleet',
-      subtitle: 'Fleet Detailing',
-      category: 'Fleet',
-    },
+    // {
+    //   image: whiteTruck1,
+    //   title: 'White Truck Fleet',
+    //   subtitle: 'Fleet Detailing',
+    //   category: 'Fleet',
+    // },
     {
       image: interiorTruck,
       title: 'Interior Detailing',
