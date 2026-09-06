@@ -15,7 +15,6 @@ import crane2 from '../assets/Crane2Img.png';
 import craneWash from '../assets/CraneWash.png';
 import craneWashing from '../assets/CraneWashing.jpeg';
 import interiorTruck from '../assets/InteriortruckWashhh.png';
-import interiorTruckWash from '../assets/interiortruckwash.png';
 import minoTruck1 from '../assets/MinoTruck1.png';
 import minoTruck2 from '../assets/MinoTruck2.png';
 import redTruck from '../assets/RedTruck.png';
@@ -101,6 +100,12 @@ function Gallery() {
       title: 'White Truck Fleet',
       subtitle: 'Fleet Detailing',
       category: 'Fleet',
+    },
+    {
+      image: interiorTruck,
+      title: 'Interior Detailing',
+      subtitle: 'Professional Interior Clean',
+      category: 'Detailing',
     },
     {
       image: heavyMachine1,
