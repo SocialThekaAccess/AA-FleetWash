@@ -5,6 +5,7 @@ import blueTruck from '../assets/BlueTruck.png';
 import truckWashImage from '../assets/TruckWash.png';
 import interiorTruck from '../assets/InteriortruckWashhh.png';
 import whiteTruck2 from '../assets/TruckWhite2.png';
+import redTruck2 from '../assets/RedTruck2.png';
 import engineBayClean1 from '../assets/EngineBayClean.jpeg';
 import waxAndPaintProtectionImage from '../assets/WAXANDPAINTPROTECTIONn.png';
 import fleetWashingProgram from '../assets/FLEETWASHINGPROGRAM.png';
@@ -108,14 +109,14 @@ function Home() {
     {
       code: '08',
       tag: 'TT',
-      image: heavyMachine1,
+      image: whiteTruck2,
       title: 'Tipper & Trailer Wash',
       description: 'Complete wash for tippers, trailers and bulk carriers. Specialized cleaning removes stubborn materials from bins and bodies.'
     },
     {
       code: '09',
       tag: 'TC',
-      image: whiteTruck2,
+      image: redTruck2,
       title: 'Truck Care & Maintenance',
       description: 'Complete truck care service including waxing, polishing and protective coating. Keep your truck looking professional and protected.'
     }
@@ -540,7 +541,7 @@ function Home() {
               },
               {
                 q: 'Do you come to our depot or do we come to you?',
-                a: 'We come to you! 100% mobile service at your depot, yard, job site, or rest stops. We bring all water, power, and equipment. No need to move your vehicles.'
+                a: 'We come to you! 100% mobile service at your depot, yard, or job site. We bring all water, power, and equipment. No need to move your vehicles.'
               },
               {
                 q: 'What products do you use? Are they safe?',

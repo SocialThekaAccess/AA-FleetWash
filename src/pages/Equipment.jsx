@@ -13,7 +13,7 @@ function Equipment() {
     { name: 'Trailers', image: kenworthFull, description: 'All trailer types and containers' },
     { name: 'Cranes', image: craneWashing, description: 'Tower cranes and mobile cranes' },
     { name: 'Dump Trucks', image: redTruck, description: 'Tipper trucks and dump trucks' },
-    { name: 'Excavators', image: minoTruck, description: 'Mini to large excavators' },
+    { name: 'Small Trucks', image: minoTruck, description: 'Light commercial and delivery vehicles' },
     { name: 'Heavy Machinery', image: heavyMachine, description: 'Construction and industrial equipment' }
   ];
 
