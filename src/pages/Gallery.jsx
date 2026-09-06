@@ -317,7 +317,6 @@ function Gallery() {
             <div className="lightbox-info">
               <div className="lightbox-text">
                 <h3>{selectedImage.title}</h3>
-                <p>{selectedImage.subtitle}</p>
               </div>
 
               <div className="lightbox-actions">
