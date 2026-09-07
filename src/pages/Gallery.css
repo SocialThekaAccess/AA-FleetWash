@@ -1258,14 +1258,16 @@ background instead of a hard crop.
 ========================= */
 
 .gallery-videos {
-  width: min(1440px, calc(100% - 80px));
-  margin: 80px auto 110px;
+  width: 100%;
+  margin: 80px 0 110px;
   padding: 60px 0;
+  overflow: hidden;
 }
 
 .gallery-videos-header {
+  width: min(1440px, calc(100% - 80px));
+  margin: 0 auto 50px;
   text-align: center;
-  margin-bottom: 50px;
 }
 
 .gallery-videos-header h2 {
@@ -1286,9 +1288,23 @@ background instead of a hard crop.
 }
 
 .gallery-videos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
   gap: 24px;
+  animation: scroll-left 30s linear infinite;
+  width: max-content;
+}
+
+.gallery-videos-grid:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .gallery-video-card {
@@ -1299,6 +1315,7 @@ background instead of a hard crop.
   border: 1px solid rgba(16, 19, 26, 0.08);
   box-shadow: 0 4px 12px rgba(16, 19, 26, 0.08);
   transition: all 0.35s cubic-bezier(.2,.7,.2,1);
+  flex: 0 0 380px;
 }
 
 .gallery-video-card:hover {
@@ -1310,7 +1327,7 @@ background instead of a hard crop.
 .gallery-video-card video {
   display: block;
   width: 100%;
-  aspect-ratio: 9 / 16;
+  height: 640px;
   object-fit: cover;
   background: #000;
 }
@@ -1318,30 +1335,31 @@ background instead of a hard crop.
 /* Tablet */
 @media (max-width: 1100px) {
   .gallery-videos {
+    margin: 60px 0 80px;
+  }
+
+  .gallery-videos-header {
     width: min(100% - 48px, 1440px);
-    margin: 60px auto 80px;
   }
 
-  .gallery-videos-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .gallery-video-card {
+    flex: 0 0 320px;
   }
 
-  .gallery-video-card:last-child {
-    grid-column: 1 / -1;
-    max-width: 500px;
-    margin: 0 auto;
+  .gallery-video-card video {
+    height: 540px;
   }
 }
 
 /* Mobile */
 @media (max-width: 700px) {
   .gallery-videos {
-    width: calc(100% - 32px);
-    margin: 50px auto 60px;
+    margin: 50px 0 60px;
     padding: 40px 0;
   }
 
   .gallery-videos-header {
+    width: calc(100% - 32px);
     margin-bottom: 35px;
   }
 
@@ -1354,12 +1372,14 @@ background instead of a hard crop.
   }
 
   .gallery-videos-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 16px;
   }
 
-  .gallery-video-card:last-child {
-    grid-column: 1;
-    max-width: 100%;
+  .gallery-video-card {
+    flex: 0 0 280px;
+  }
+
+  .gallery-video-card video {
+    height: 480px;
   }
 }
