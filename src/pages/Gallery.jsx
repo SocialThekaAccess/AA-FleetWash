@@ -30,6 +30,9 @@ import engineBayClean2 from '../assets/EngineBayClean2.jpeg';
 import digger from '../assets/Diggerr.png';
 import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import wheelAfter from '../assets/truck-wheelAfter.jpg';
+import video1 from '../assets/AA REEL 1.mp4';
+import video2 from '../assets/AA REEL 2 V2.mp4';
+import video3 from '../assets/AA REEL 3 V2.mp4';
 
 import './Gallery.css';
 
@@ -241,6 +244,40 @@ function Gallery() {
 
         </section>
       )}
+
+
+      {/* VIDEO SECTION */}
+      <section className="gallery-videos">
+        <div className="gallery-videos-header">
+          <div className="gallery-label">
+            <span className="gallery-label-dot">●</span>
+            WATCH US IN ACTION
+          </div>
+          <h2>See Our Work in Motion</h2>
+          <p>Professional fleet washing delivered on-site across Melbourne.</p>
+        </div>
+
+        <div className="gallery-videos-grid">
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video1} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video2} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video3} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+      </section>
 
 
       {/* CTA */}
