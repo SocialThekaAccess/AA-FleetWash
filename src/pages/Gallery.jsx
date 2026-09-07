@@ -262,37 +262,37 @@ function Gallery() {
 
         <div className="gallery-videos-grid">
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video4} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video5} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video6} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video1} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video2} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </div>
           <div className="gallery-video-card">
-            <video controls playsInline>
+            <video autoPlay loop muted playsInline>
               <source src={video3} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
