@@ -33,6 +33,9 @@ import wheelAfter from '../assets/truck-wheelAfter.jpg';
 import video1 from '../assets/AA REEL 1.mp4';
 import video2 from '../assets/AA REEL 2 V2.mp4';
 import video3 from '../assets/AA REEL 3 V2.mp4';
+import video4 from '../assets/BlueTruck.mp4';
+import video5 from '../assets/BlueTruck2.mp4';
+import video6 from '../assets/BlueTruck3.mp4';
 
 import './Gallery.css';
 
@@ -258,6 +261,24 @@ function Gallery() {
         </div>
 
         <div className="gallery-videos-grid">
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video4} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video5} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="gallery-video-card">
+            <video controls playsInline>
+              <source src={video6} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
           <div className="gallery-video-card">
             <video controls playsInline>
               <source src={video1} type="video/mp4" />
