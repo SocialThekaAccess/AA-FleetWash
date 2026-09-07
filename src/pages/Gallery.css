@@ -1290,7 +1290,7 @@ background instead of a hard crop.
 .gallery-videos-grid {
   display: flex;
   gap: 24px;
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 35s linear infinite;
   width: max-content;
 }
 
@@ -1303,7 +1303,7 @@ background instead of a hard crop.
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-404px * 6));
   }
 }
 
