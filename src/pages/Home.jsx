@@ -19,6 +19,9 @@ import wheelBefore from '../assets/truck-wheelBefore.jpg';
 import video1 from '../assets/AA REEL 1.mp4';
 import video2 from '../assets/AA REEL 2 V2.mp4';
 import video3 from '../assets/AA REEL 3 V2.mp4';
+import video4 from '../assets/BlueTruck.mp4';
+import video5 from '../assets/BlueTruck2.mp4';
+import video6 from '../assets/BlueTruck3.mp4';
 import './Home.css';
 
 function Home() {
@@ -412,6 +415,21 @@ function Home() {
         </div>
 
         <div className="reel__track">
+          <div className="reel__card">
+            <video autoPlay loop muted playsInline>
+              <source src={video4} type="video/mp4" />
+            </video>
+          </div>
+          <div className="reel__card">
+            <video autoPlay loop muted playsInline>
+              <source src={video5} type="video/mp4" />
+            </video>
+          </div>
+          <div className="reel__card">
+            <video autoPlay loop muted playsInline>
+              <source src={video6} type="video/mp4" />
+            </video>
+          </div>
           <div className="reel__card">
             <video autoPlay loop muted playsInline>
               <source src={video1} type="video/mp4" />
