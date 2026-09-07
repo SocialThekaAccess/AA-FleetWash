@@ -415,35 +415,68 @@ function Home() {
         </div>
 
         <div className="reel__track">
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video4} type="video/mp4" />
-            </video>
-          </div>
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video5} type="video/mp4" />
-            </video>
-          </div>
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video6} type="video/mp4" />
-            </video>
-          </div>
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video1} type="video/mp4" />
-            </video>
-          </div>
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video2} type="video/mp4" />
-            </video>
-          </div>
-          <div className="reel__card">
-            <video autoPlay loop muted playsInline>
-              <source src={video3} type="video/mp4" />
-            </video>
+          <div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video4} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video5} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video6} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video1} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video2} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video3} type="video/mp4" />
+              </video>
+            </div>
+            {/* Duplicate for infinite scroll */}
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video4} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video5} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video6} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video1} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video2} type="video/mp4" />
+              </video>
+            </div>
+            <div className="reel__card">
+              <video autoPlay loop muted playsInline>
+                <source src={video3} type="video/mp4" />
+              </video>
+            </div>
           </div>
         </div>
       </section>

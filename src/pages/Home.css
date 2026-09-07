@@ -1361,37 +1361,29 @@
   position: relative;
   z-index: 2;
   width: 100%;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--orange) rgba(255, 255, 255, 0.1);
+  overflow: hidden;
   padding: 20px 0 40px;
   margin: 0 auto;
-  max-width: 1400px;
 }
 
-.reel__track::-webkit-scrollbar {
-  height: 8px;
-}
-
-.reel__track::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 10px;
-}
-
-.reel__track::-webkit-scrollbar-thumb {
-  background: var(--orange);
-  border-radius: 10px;
-}
-
-.reel__track::-webkit-scrollbar-thumb:hover {
-  background: #2e92ff;
-}
-
-.reel__track {
+.reel__track > div {
   display: flex;
   gap: 24px;
-  padding-left: clamp(20px, 5vw, 64px);
-  padding-right: clamp(20px, 5vw, 64px);
+  animation: scrollReel 35s linear infinite;
+  width: max-content;
+}
+
+.reel__track > div:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scrollReel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-404px * 6));
+  }
 }
 
 .reel__card {
