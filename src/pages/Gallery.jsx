@@ -43,6 +43,37 @@ function Gallery() {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedImage, setSelectedImage] = useState(null);
   const [showBookingForm, setShowBookingForm] = useState(false);
+  const [formStatus, setFormStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleBookingSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus('');
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const filters = [
     'All',
@@ -370,26 +401,31 @@ function Gallery() {
               <p>Fill out the form and we'll get back to you shortly</p>
             </div>
 
-            <form className="booking-form">
+            <form className="booking-form" onSubmit={handleBookingSubmit}>
+              {/* W3Forms Access Key */}
+              <input type="hidden" name="access_key" value="59324ef2-3b1a-4881-9046-6a45e7a760c4" />
+              <input type="hidden" name="subject" value="New Booking Request from Gallery - AA Fleet Wash" />
+              <input type="hidden" name="from_name" value="AA Fleet Wash Website" />
+
               <div className="form-row">
                 <div className="form-group">
                   <label>Full Name *</label>
-                  <input type="text" placeholder="Your name" required />
+                  <input type="text" name="name" placeholder="Your name" required />
                 </div>
                 <div className="form-group">
                   <label>Phone *</label>
-                  <input type="tel" placeholder="+61" required />
+                  <input type="tel" name="phone" placeholder="+61" required />
                 </div>
               </div>
 
               <div className="form-group">
                 <label>Email *</label>
-                <input type="email" placeholder="your@email.com" required />
+                <input type="email" name="email" placeholder="your@email.com" required />
               </div>
 
               <div className="form-group">
                 <label>Service Type *</label>
-                <select required>
+                <select name="serviceType" required>
                   <option value="">Select a service</option>
                   <option value="exterior">Exterior Truck Wash</option>
                   <option value="interior">Interior Truck Wash</option>
@@ -402,11 +438,23 @@ function Gallery() {
 
               <div className="form-group">
                 <label>Message</label>
-                <textarea rows="4" placeholder="Tell us about your requirements..."></textarea>
+                <textarea name="message" rows="4" placeholder="Tell us about your requirements..."></textarea>
               </div>
 
-              <button type="submit" className="booking-submit-btn">
-                Send Request
+              {formStatus === 'success' && (
+                <div style={{padding: '12px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '4px', marginBottom: '16px'}}>
+                  Thank you! Your booking request has been received. We'll contact you soon.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div style={{padding: '12px', backgroundColor: '#f8d7da', color: '#721c24', borderRadius: '4px', marginBottom: '16px'}}>
+                  Oops! Something went wrong. Please try again or call us at +61 489 225 500.
+                </div>
+              )}
+
+              <button type="submit" className="booking-submit-btn" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Send Request'}
                 <span>→</span>
               </button>
             </form>

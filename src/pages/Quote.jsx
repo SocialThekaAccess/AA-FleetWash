@@ -1,6 +1,39 @@
+import { useState } from 'react';
 import './SharedPages.css';
 
 function Quote() {
+  const [formStatus, setFormStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus('');
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="page">
       <section className="page-hero">
@@ -20,7 +53,12 @@ function Quote() {
               <p>Fill out the form below and we'll get back to you within 24 hours with a detailed quote for your specific needs.</p>
             </div>
 
-            <form className="quote-form">
+            <form className="quote-form" onSubmit={handleSubmit}>
+              {/* W3Forms Access Key - Replace with your actual key */}
+              <input type="hidden" name="access_key" value="59324ef2-3b1a-4881-9046-6a45e7a760c4" />
+              <input type="hidden" name="subject" value="New Quote Request - AA Fleet Wash" />
+              <input type="hidden" name="from_name" value="AA Fleet Wash Website" />
+
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="name">Full Name *</label>
@@ -91,7 +129,21 @@ function Quote() {
                 ></textarea>
               </div>
 
-              <button type="submit" className="btn-primary btn-large">Request Free Quote</button>
+              {formStatus === 'success' && (
+                <div style={{padding: '12px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '4px', marginBottom: '16px'}}>
+                  Thank you! Your quote request has been received. We'll get back to you within 24 hours.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div style={{padding: '12px', backgroundColor: '#f8d7da', color: '#721c24', borderRadius: '4px', marginBottom: '16px'}}>
+                  Oops! Something went wrong. Please try again or contact us directly at +61 489 225 500.
+                </div>
+              )}
+
+              <button type="submit" className="btn-primary btn-large" disabled={isSubmitting}>
+                {isSubmitting ? 'Sending...' : 'Request Free Quote'}
+              </button>
 
               <p className="form-disclaimer">
                 By submitting this form, you agree to be contacted by AA Fleet Wash regarding your quote request. We respect your privacy and will never share your information.

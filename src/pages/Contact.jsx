@@ -1,6 +1,39 @@
+import { useState } from 'react';
 import './SharedPages.css';
 
 function Contact() {
+  const [formStatus, setFormStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus('');
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="contact-page">
       {/* Hero Section */}
@@ -102,7 +135,12 @@ function Contact() {
                 <p>Quote within 24 hours. We'll come back with a fixed price and a slot, no surprises.</p>
               </div>
 
-              <form className="quote-form-contact">
+              <form className="quote-form-contact" onSubmit={handleSubmit}>
+                {/* W3Forms Access Key - Replace with your actual key */}
+                <input type="hidden" name="access_key" value="59324ef2-3b1a-4881-9046-6a45e7a760c4" />
+                <input type="hidden" name="subject" value="New Contact Form Submission - AA Fleet Wash" />
+                <input type="hidden" name="from_name" value="AA Fleet Wash Website" />
+
                 <div className="form-group">
                   <label htmlFor="firstName">First Name</label>
                   <input type="text" id="firstName" name="firstName" placeholder="First Name" required />
@@ -145,7 +183,21 @@ function Contact() {
                   </label>
                 </div>
 
-                <button type="submit" className="btn-submit-contact">Submit</button>
+                {formStatus === 'success' && (
+                  <div style={{padding: '12px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '4px', marginBottom: '16px'}}>
+                    Thank you! Your message has been sent successfully. We'll get back to you soon.
+                  </div>
+                )}
+
+                {formStatus === 'error' && (
+                  <div style={{padding: '12px', backgroundColor: '#f8d7da', color: '#721c24', borderRadius: '4px', marginBottom: '16px'}}>
+                    Oops! Something went wrong. Please try again or contact us directly.
+                  </div>
+                )}
+
+                <button type="submit" className="btn-submit-contact" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Submit'}
+                </button>
               </form>
             </div>
           </div>

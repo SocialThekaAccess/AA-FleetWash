@@ -29,7 +29,38 @@ function Home() {
   const [activeThumb, setActiveThumb] = useState(0);
   const [openFAQ, setOpenFAQ] = useState(null);
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
+  const [formStatus, setFormStatus] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const formRef = useRef(null);
+
+  const handleHomeFormSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus('');
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormStatus('success');
+        form.reset();
+      } else {
+        setFormStatus('error');
+      }
+    } catch (error) {
+      setFormStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -263,30 +294,35 @@ function Home() {
               <h2>Tell us about the job</h2>
             </div>
 
-            <form id="quoteForm">
+            <form id="quoteForm" onSubmit={handleHomeFormSubmit}>
+              {/* W3Forms Access Key */}
+              <input type="hidden" name="access_key" value="59324ef2-3b1a-4881-9046-6a45e7a760c4" />
+              <input type="hidden" name="subject" value="New Quote Request from Home Page - AA Fleet Wash" />
+              <input type="hidden" name="from_name" value="AA Fleet Wash Website" />
+
               <div className="field">
-                <input type="text" placeholder="Your full name" required />
+                <input type="text" name="name" placeholder="Your full name" required />
                 <label>Full name</label>
               </div>
 
               <div className="field">
-                <input type="text" placeholder="Company / business name" />
+                <input type="text" name="company" placeholder="Company / business name" />
                 <label>Company</label>
               </div>
 
               <div className="field-row">
                 <div className="field">
-                  <input type="tel" placeholder="04xx xxx xxx" required />
+                  <input type="tel" name="phone" placeholder="04xx xxx xxx" required />
                   <label>Phone</label>
                 </div>
                 <div className="field">
-                  <input type="email" placeholder="you@company.com" required />
+                  <input type="email" name="email" placeholder="you@company.com" required />
                   <label>Email</label>
                 </div>
               </div>
 
               <div className="field field--no-label">
-                <select required defaultValue="">
+                <select name="service" required defaultValue="">
                   <option value="" disabled>Select a service</option>
                   <option>Truck washing</option>
                   <option>Fleet washing</option>
@@ -296,12 +332,24 @@ function Home() {
               </div>
 
               <div className="field">
-                <textarea placeholder="What are we washing, and where's it parked?" />
+                <textarea name="details" placeholder="What are we washing, and where's it parked?" />
                 <label>Fleet / vehicle details</label>
               </div>
 
-              <button type="submit" className="docket-submit">
-                GET YOUR FREE QUOTE
+              {formStatus === 'success' && (
+                <div style={{padding: '12px', backgroundColor: '#d4edda', color: '#155724', borderRadius: '4px', marginBottom: '16px', fontSize: '14px'}}>
+                  Thank you! We've received your quote request and will get back to you soon.
+                </div>
+              )}
+
+              {formStatus === 'error' && (
+                <div style={{padding: '12px', backgroundColor: '#f8d7da', color: '#721c24', borderRadius: '4px', marginBottom: '16px', fontSize: '14px'}}>
+                  Oops! Something went wrong. Please call us at +61 489 225 500.
+                </div>
+              )}
+
+              <button type="submit" className="docket-submit" disabled={isSubmitting}>
+                {isSubmitting ? 'SENDING...' : 'GET YOUR FREE QUOTE'}
               </button>
 
               <p className="docket-fine">
